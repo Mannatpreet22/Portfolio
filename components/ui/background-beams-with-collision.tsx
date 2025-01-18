@@ -6,14 +6,13 @@ import { TextGenerateEffect } from "./text-generate-effect";
 import { FloatingDock } from "./floating-dock";
 
 import {
-    IconBrain,
     IconBrandGithub,
     IconBrandLinkedin,
+    IconBulb,
+    IconCertificate,
     IconFileDownload,
     IconHome,
-    IconRocket,
   } from "@tabler/icons-react";
-import { div } from "framer-motion/client";
 import { NavbarDemo } from "../Navbar";
 
 export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
@@ -28,7 +27,7 @@ export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
         {
           title: "Skills",
           icon: (
-            <IconBrain className="h-full w-full text-neutral-300" />
+            <IconCertificate className="h-full w-full text-neutral-300" />
           ),
           href: "#",
         },
@@ -36,7 +35,7 @@ export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
         {
           title: "Projects",
           icon: (
-            <IconRocket className="h-full w-full text-neutral-300" />
+            <IconBulb className="h-full w-full text-neutral-300" />
           ),
           href: "#",
         },

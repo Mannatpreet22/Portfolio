@@ -9,6 +9,8 @@ import {
     IconBrain,
     IconBrandGithub,
     IconBrandLinkedin,
+    IconBulb,
+    IconClipboardList,
     IconFileDownload,
     IconHome,
     IconRocket,
@@ -219,7 +221,7 @@ function IconContainer({
       {
         title: "Skills",
         icon: (
-          <IconBrain className="h-full w-full text-neutral-300" />
+          <IconBulb className="h-full w-full text-neutral-300" />
         ),
         href: "#",
       },

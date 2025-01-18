@@ -1,7 +1,6 @@
-import { NavbarDemo } from "@/components/Navbar";
 import { BackgroundBeamsWithCollisionDemo } from "@/components/ui/background-beams-with-collision";
 import { CoverDemo } from "@/components/ui/cover";
-import { FloatingDockDemo } from "@/components/ui/floating-dock";
+import { FocusCardsDemo } from "@/components/ui/focus-cards";
 import { SkillCard } from "@/components/ui/skillCard";
 
 export default function Home() {
@@ -10,8 +9,10 @@ export default function Home() {
       {/* <NavbarDemo /> */}
       <BackgroundBeamsWithCollisionDemo para="Aspiring Software Developer | Crafting Innovative Solutions with Precision and Passion"/>
       {/* <FloatingDockDemo /> */}
-      <CoverDemo />
+      <CoverDemo word="Skills"/>
       <SkillCard />
+      <CoverDemo word="Projects"/>
+      <FocusCardsDemo />
     </div>
   );
 }

@@ -13,6 +13,7 @@ import {
     IconClipboardList,
     IconFileDownload,
     IconHome,
+    IconMessage,
     IconRocket,
   } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
@@ -225,11 +226,17 @@ function IconContainer({
         ),
         href: "#",
       },
-     
       {
         title: "Projects",
         icon: (
           <IconRocket className="h-full w-full text-neutral-300" />
+        ),
+        href: "#",
+      },
+      {
+        title: "Contact Me",
+        icon: (
+          <IconBrain className="h-full w-full text-neutral-300" />
         ),
         href: "#",
       },

@@ -12,6 +12,9 @@ import {
     IconCertificate,
     IconFileDownload,
     IconHome,
+    IconLetterA,
+    IconMail,
+    IconMessage,
   } from "@tabler/icons-react";
 import { NavbarDemo } from "../Navbar";
 
@@ -40,12 +43,20 @@ export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
           href: "#",
         },
         {
-          title: "Download Resume",
-          icon: (
-            <IconFileDownload className="h-full w-full text-neutral-300" />
-          ),
-          href: "#",
+            title: "Download Resume",
+            icon: (
+              <IconFileDownload className="h-full w-full text-neutral-300" />
+            ),
+            href: "#",
         },
+        {
+            title: "Contact Me",
+            icon: (
+              <IconMail className="h-full w-full text-neutral-300" />
+            ),
+            href: "#",
+          },
+        
         {
           title: "LinkedIn",
           icon: (

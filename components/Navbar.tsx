@@ -65,7 +65,7 @@ export function Navbar() {
 
 export function NavbarDemo() {
   return <nav className=" border-gray-200 bg-inherit mt-0 z-50">
-    <div className="max-w-screen-xl flex flex-wrap items-center justify-between p-2 mx-7">
+    <div className="max-w-screen flex flex-wrap items-center justify-between p-2 mx-7">
 
       {/* LOGO WITH GRADIENT RING */}
       <a href="#" className="rounded-full">

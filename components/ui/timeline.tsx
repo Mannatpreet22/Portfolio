@@ -7,6 +7,8 @@ import {
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { CoverDemo } from "./cover";
+import { LinkPreview } from "./link-preview";
 
 interface TimelineEntry {
   title: string;
@@ -38,15 +40,23 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-inherit font-sans md:px-10"
       ref={containerRef}
     >
-      {/* <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-          Changelog from my journey
+      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 flex justify-between items-center">
+        <div>
+        <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl">
+          My journey so far.
         </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
-          a timeline of my journey.
+        <p className="text-neutral-300 text-sm md:text-base max-w-2xl">
+        I am an aspiring software developer passionate about creating impactful solutions and driving innovation in the software industry, leveraging skills in C++, Python, and full-stack development to build efficient and scalable projects.
         </p>
-      </div> */}
+        </div>
+        <Image
+                src="/timeline_start_image.avif"
+                alt="startup template"
+                width={400}
+                height={300}
+                className="rounded-xl"
+              />
+      </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
@@ -58,13 +68,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-800 border border-neutral-700 p-2" />
               </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 ">
+              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-slate-400 ">
                 {item.title}
               </h3>
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
-              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500">
+              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-slate-400">
                 {item.title}
               </h3>
               {item.content}{" "}
@@ -137,11 +147,11 @@ export function TimelineDemo() {
         title: "Early 2023",
         content: (
           <div>
-            <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
               I usually run out of copy, but when I see content this big, I try to
               integrate lorem ipsum.
             </p>
-            <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
               Lorem ipsum is for people who are too lazy to write copy. But we are
               not. Here are some more example of beautiful designs I built.
             </p>
@@ -179,30 +189,43 @@ export function TimelineDemo() {
         ),
       },
       {
-        title: "Changelog",
+        title: "Education",
         content: (
-          <div>
-            <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-              Deployed 5 new components on Aceternity today
-            </p>
-            <div className="mb-8">
-              <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                ✅ Card grid component
-              </div>
-              <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                ✅ Startup template Aceternity
-              </div>
-              <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                ✅ Random file upload lol
-              </div>
-              <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                ✅ Himesh Reshammiya Music CD
-              </div>
-              <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-                ✅ Salman Bhai Fan Club registrations open
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div>
+                <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
+                    <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+                        <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                            <span className=""> Seneca Polytechnic</span>
+                        </div>
+                        <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
+                            <span className=""> Seneca Polytechnic</span>
+                        </div>
+                    </div>
+                    <div className="font-normal text-xs text-white">2023-2026</div>
+                </h1>
+                <div className="mb-8">
+                    <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
+                        <div className="mb-2">
+                            Focuses on web development, distributed programming, database administration, security, and various operating systems.
+                        </div>
+                        <div>
+                            <ul>
+                                <li>&#8226; Earned President's Honour List in the
+                                    {' '}<LinkPreview url="https://framer.com/motion" className="font-bold">
+                                        2nd
+                                    </LinkPreview>{' '}
+                                    &
+                                    {' '}<LinkPreview url="https://framer.com/motion" className="font-bold">
+                                        3rd
+                                    </LinkPreview>{' '}
+                                    semester</li>
+                                <li>&#8226; Participated in Seneca's Housing Hackathon</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            {/* <div className="grid grid-cols-2 gap-4">
               <Image
                 src="https://assets.aceternity.com/pro/hero-sections.png"
                 alt="hero template"
@@ -231,7 +254,7 @@ export function TimelineDemo() {
                 height={500}
                 className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
               />
-            </div>
+            </div> */}
           </div>
         ),
       },

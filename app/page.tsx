@@ -17,7 +17,7 @@ export default function Home() {
       <CoverDemo word="Projects"/>
       {/* <FocusCardsDemo /> */}
       <AppleCardsCarouselDemo />
-      <CoverDemo word="Work Experience"/>
+      <CoverDemo word="Education & Experience"/>
       <TimelineDemo />
       <CoverDemo word="Let's get in Touch"/>
       <SignupFormDemo />

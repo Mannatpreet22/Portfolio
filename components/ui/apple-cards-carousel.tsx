@@ -26,7 +26,7 @@ interface CarouselProps {
 type Card = {
   src: string;
   title: string;
-  category: string;
+  category?: string;
   content: React.ReactNode;
 };
 
@@ -345,39 +345,39 @@ export function AppleCardsCarouselDemo() {
    
   const data = [
     {
-      category: "Paybuddy",
-      title: "You can do more with AI.",
+      category: "Project",
+      title: "Paybuddy",
       src: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content: <DummyContent />,
     },
     {
-      category: "Electro Charge",
-      title: "Enhance your productivity.",
+    //   category: "Electro Charge",
+      title: "Electro Charge",
       src: "https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content: <DummyContent />,
     },
     {
-      category: "Blogging Website",
-      title: "Launching the new Apple Vision Pro.",
+    //   category: "Blogging Website",
+      title: "Blogging Website",
       src: "https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content: <DummyContent />,
     },
    
     {
-      category: "Assembly Line Simulator",
-      title: "Maps for your iPhone 15 Pro Max.",
+    //   category: "Assembly Line Simulator",
+      title: "Assembly Line Simulator",
       src: "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content: <DummyContent />,
     },
     {
-      category: "Travel Booking",
-      title: "Photography just got better.",
+    //   category: "Travel Booking",
+      title: "Travel Booking",
       src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content: <DummyContent />,
     },
     {
-      category: "Lego Sets",
-      title: "Hiring for a Staff Software Engineer",
+    //   category: "Lego Sets",
+      title: "Lego Sets",
       src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content: <DummyContent />,
     },

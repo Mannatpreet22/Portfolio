@@ -12,9 +12,7 @@ import {
     IconCertificate,
     IconFileDownload,
     IconHome,
-    IconLetterA,
     IconMail,
-    IconMessage,
   } from "@tabler/icons-react";
 import { NavbarDemo } from "../Navbar";
 
@@ -47,7 +45,7 @@ export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
             icon: (
               <IconFileDownload className="h-full w-full text-neutral-300" />
             ),
-            href: "#",
+            href: "https://drive.google.com/file/d/1ZbCfqIbg5kTzJ5X9aSNgjqoZW4vjXVDF/view?usp=share_link",
         },
         {
             title: "Contact Me",

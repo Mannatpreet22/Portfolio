@@ -1,13 +1,11 @@
 "use client";
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { CoverDemo } from "./cover";
 import { LinkPreview } from "./link-preview";
 
 interface TimelineEntry {
@@ -103,89 +101,80 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
 export function TimelineDemo() {
     const data = [
+    //   {
+    //     title: "2024",
+    //     content: (
+    //       <div>
+    //         <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+    //           Built and launched Aceternity UI and Aceternity UI Pro from scratch
+    //         </p>
+    //         <div className="grid grid-cols-2 gap-4">
+    //           <Image
+    //             src="https://assets.aceternity.com/templates/startup-1.webp"
+    //             alt="startup template"
+    //             width={500}
+    //             height={500}
+    //             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+    //           />
+    //           <Image
+    //             src="https://assets.aceternity.com/templates/startup-2.webp"
+    //             alt="startup template"
+    //             width={500}
+    //             height={500}
+    //             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+    //           />
+    //           <Image
+    //             src="https://assets.aceternity.com/templates/startup-3.webp"
+    //             alt="startup template"
+    //             width={500}
+    //             height={500}
+    //             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+    //           />
+    //           <Image
+    //             src="https://assets.aceternity.com/templates/startup-4.webp"
+    //             alt="startup template"
+    //             width={500}
+    //             height={500}
+    //             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+    //           />
+    //         </div>
+    //       </div>
+    //     ),
+    //   },
       {
-        title: "2024",
+        title: "Work Experience",
         content: (
-          <div>
-            <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-              Built and launched Aceternity UI and Aceternity UI Pro from scratch
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              <Image
-                src="https://assets.aceternity.com/templates/startup-1.webp"
-                alt="startup template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-              <Image
-                src="https://assets.aceternity.com/templates/startup-2.webp"
-                alt="startup template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-              <Image
-                src="https://assets.aceternity.com/templates/startup-3.webp"
-                alt="startup template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-              <Image
-                src="https://assets.aceternity.com/templates/startup-4.webp"
-                alt="startup template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
+            <div>
+                <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
+                    <div className="flex justify-between items-center">
+                    <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+                        <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                            <span className="">Value Village</span>
+                        </div>
+                        <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
+                            <span className="">Value Village</span>
+                        </div>
+                    </div>
+                    <div className="font-normal text-sm text-white pl-2">2023-current</div>
+                    </div>
+                </h1>
+                <div className="mb-8">
+                    <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
+                        {/* <div className="mb-2">
+                            Focuses on web development, distributed programming, database administration, security, and various operating systems.
+                        </div> */}
+                        <div>
+                            <ul>
+                                <li>&#8226; Delivered customer-focused service, assisting with sales, inventory tracking, and</li>
+                                <li className="pl-3 pb-3">operational tasks, showcasing problem-solving and teamwork.</li>
+                                <li>&#8226; Maintained store displays and optimized inventory organization to improve</li>
+                                <li className="pl-3">efficiency and customer satisfaction in a fast-paced environment.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          </div>
-        ),
-      },
-      {
-        title: "Early 2023",
-        content: (
-          <div>
-            <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-              I usually run out of copy, but when I see content this big, I try to
-              integrate lorem ipsum.
-            </p>
-            <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-              Lorem ipsum is for people who are too lazy to write copy. But we are
-              not. Here are some more example of beautiful designs I built.
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              <Image
-                src="https://assets.aceternity.com/pro/hero-sections.png"
-                alt="hero template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-              <Image
-                src="https://assets.aceternity.com/features-section.png"
-                alt="feature template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-              <Image
-                src="https://assets.aceternity.com/pro/bento-grids.png"
-                alt="bento template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-              <Image
-                src="https://assets.aceternity.com/cards.png"
-                alt="cards template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-            </div>
-          </div>
         ),
       },
       {
@@ -193,15 +182,17 @@ export function TimelineDemo() {
         content: (
             <div>
                 <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
-                    <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+                    <div className="flex justify-between items-center">
+                    <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
                         <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-                            <span className=""> Seneca Polytechnic</span>
+                            <span className="">Seneca Polytechnic</span>
                         </div>
                         <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-                            <span className=""> Seneca Polytechnic</span>
+                            <span className="">Seneca Polytechnic</span>
                         </div>
                     </div>
-                    <div className="font-normal text-xs text-white">2023-2026</div>
+                    <div className="font-normal text-sm text-white pl-2">2023-2026</div>
+                    </div>
                 </h1>
                 <div className="mb-8">
                     <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
@@ -210,15 +201,11 @@ export function TimelineDemo() {
                         </div>
                         <div>
                             <ul>
-                                <li>&#8226; Earned President's Honour List in the
-                                    {' '}<LinkPreview url="https://framer.com/motion" className="font-bold">
-                                        2nd
+                                <li>&#8226; Earned
+                                    {' '}<LinkPreview url="https://drive.google.com/file/d/1HuVhkY7SatDC38IEUpfrzJMX2pVo5RfK/view?usp=share_link" className="font-bold">
+                                    President's Honour List
                                     </LinkPreview>{' '}
-                                    &
-                                    {' '}<LinkPreview url="https://framer.com/motion" className="font-bold">
-                                        3rd
-                                    </LinkPreview>{' '}
-                                    semester</li>
+                                    in the 2nd & 3rd semester</li>
                                 <li>&#8226; Participated in Seneca's Housing Hackathon</li>
                             </ul>
                         </div>

@@ -17,6 +17,7 @@ import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
 import { JSX } from "react";
+import { CoverDemo } from "./cover";
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -253,7 +254,7 @@ export const Card = ({
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="text-white text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2"
+            className="text-white text-xl md:text-3xl font-semibold max-w-xs [text-wrap:balance] text-left font-sans mt-2"
           >
             {card.title}
           </motion.p>
@@ -305,8 +306,9 @@ export function AppleCardsCarouselDemo() {
     ));
    
     return (
-      <div className="w-full h-full py-20">
-        <Carousel items={cards} />
+      <div className="w-full h-full py-5" id="projects">
+        <CoverDemo word="Projects"/>
+        <Carousel items={cards}/>
       </div>
     );
   }
@@ -345,40 +347,40 @@ export function AppleCardsCarouselDemo() {
    
   const data = [
     {
-      category: "Project",
+      category: "",
       title: "Paybuddy",
-      src: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/paybuddy.jpg",
       content: <DummyContent />,
     },
     {
     //   category: "Electro Charge",
       title: "Electro Charge",
-      src: "https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/electroCharge.jpeg",
       content: <DummyContent />,
     },
     {
     //   category: "Blogging Website",
       title: "Blogging Website",
-      src: "https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/Blogging Website.jpeg",
       content: <DummyContent />,
     },
    
     {
     //   category: "Assembly Line Simulator",
       title: "Assembly Line Simulator",
-      src: "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/AssemblyLine2.jpg",
       content: <DummyContent />,
     },
     {
     //   category: "Travel Booking",
       title: "Travel Booking",
-      src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/travel-booking.webp",
       content: <DummyContent />,
     },
     {
     //   category: "Lego Sets",
       title: "Lego Sets",
-      src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "/lego-sets.webp",
       content: <DummyContent />,
     },
   ];

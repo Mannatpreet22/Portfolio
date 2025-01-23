@@ -1,35 +1,77 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "../ui/label";
 import { Input, Textarea } from "../ui/input";
 import { cn } from "@/lib/utils";
+import { CoverDemo } from "./cover";
 
 export function SignupFormDemo() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
-  };
+
+
+  const [formData, setFormData] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    message: ''
+  })
+
+  const [status,setStatus] = useState<'idle'|'loading'|'success'|'error'>('idle')
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setStatus('loading')
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      })
+
+      if (!res.ok) {
+        setStatus('error')
+        throw new Error('Failed to submit message!')
+      }
+
+      console.log("Message Sent!")
+      setStatus('success')
+    }
+    catch (err: any) {
+      setStatus('error')
+      console.log('Error', err)
+      alert('form cannot be submitted')
+    }
+  }
+
   return (
-    <div className="max-w-4xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-inherit">
+    <div className="max-w-4xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-inherit" id="contact">
+      <CoverDemo word="Let's get in Touch"/>
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Firstname" type="text" />
+            <Input id="firstname" placeholder="Firstname" type="text" value={formData.firstname} onChange={handleChange}/>
           </LabelInputContainer>
           <LabelInputContainer>
             <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="lastname" type="text" />
+            <Input id="lastname" placeholder="lastname" type="text" value={formData.lastname} onChange={handleChange}/>
           </LabelInputContainer>
         </div>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+          <Input id="email" placeholder="projectmayhem@fc.com" type="email" value={formData.email} onChange={handleChange}/>
         </LabelInputContainer>
         <LabelInputContainer className="mb-8">
             <Label htmlFor="message">Your Message</Label>
             {/* <Input id="firstname" placeholder="Firstname" type="text" className="py-20" /> */}
-            <Textarea id="message" placeholder="your message"/>
+            <Textarea id="message" placeholder="your message"value={formData.message} onChange={handleChange}/>
         </LabelInputContainer>
 
         <button
@@ -39,7 +81,9 @@ export function SignupFormDemo() {
           Submit &rarr;
           <BottomGradient />
         </button>
-
+        {status === "loading" && <p className="text-white">Sending your message...</p>}
+        {status === "success" && <p className="text-white">Message sent successfully!</p>}
+        {status === "error" && <p className="text-white">Oops! Something went wrong.</p>}
         <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       </form>
     </div>

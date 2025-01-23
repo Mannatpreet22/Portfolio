@@ -7,6 +7,7 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { LinkPreview } from "./link-preview";
+import { CoverDemo } from "./cover";
 
 interface TimelineEntry {
   title: string;
@@ -40,20 +41,20 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 flex justify-between items-center">
         <div>
-        <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl">
-          My journey so far.
-        </h2>
-        <p className="text-neutral-300 text-sm md:text-base max-w-2xl">
-        I am an aspiring software developer passionate about creating impactful solutions and driving innovation in the software industry, leveraging skills in C++, Python, and full-stack development to build efficient and scalable projects.
-        </p>
+          <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl">
+            My journey so far.
+          </h2>
+          <p className="text-neutral-300 text-sm md:text-base max-w-2xl">
+            I am an aspiring software developer passionate about creating impactful solutions and driving innovation in the software industry, leveraging skills in C++, Python, and full-stack development to build efficient and scalable projects.
+          </p>
         </div>
         <Image
-                src="/timeline_start_image.avif"
-                alt="startup template"
-                width={400}
-                height={300}
-                className="rounded-xl"
-              />
+          src="/timeline_start_image.avif"
+          alt="startup template"
+          width={400}
+          height={300}
+          className="rounded-xl"
+        />
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
@@ -100,155 +101,122 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
 
 export function TimelineDemo() {
-    const data = [
-    //   {
-    //     title: "2024",
-    //     content: (
-    //       <div>
-    //         <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-    //           Built and launched Aceternity UI and Aceternity UI Pro from scratch
-    //         </p>
-    //         <div className="grid grid-cols-2 gap-4">
-    //           <Image
-    //             src="https://assets.aceternity.com/templates/startup-1.webp"
-    //             alt="startup template"
-    //             width={500}
-    //             height={500}
-    //             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-    //           />
-    //           <Image
-    //             src="https://assets.aceternity.com/templates/startup-2.webp"
-    //             alt="startup template"
-    //             width={500}
-    //             height={500}
-    //             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-    //           />
-    //           <Image
-    //             src="https://assets.aceternity.com/templates/startup-3.webp"
-    //             alt="startup template"
-    //             width={500}
-    //             height={500}
-    //             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-    //           />
-    //           <Image
-    //             src="https://assets.aceternity.com/templates/startup-4.webp"
-    //             alt="startup template"
-    //             width={500}
-    //             height={500}
-    //             className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-    //           />
+  const data = [
+    // {
+    //   title: "Work Experience",
+    //   content: (
+    //     <div>
+    //       <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
+    //         <div className="flex justify-between items-center">
+    //           <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+    //             <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
+    //               <span className="">Value Village</span>
+    //             </div>
+    //             <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
+    //               <span className="">Value Village</span>
+    //             </div>
+    //           </div>
+    //           <div className="font-normal text-sm text-white pl-2">2023-current</div>
     //         </div>
+    //       </h1>
+    //       <div className="mb-8">
+    //         <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
+    //           {/* <div className="mb-2">
+    //                         Focuses on web development, distributed programming, database administration, security, and various operating systems.
+    //                     </div> */}
+    //           <div>
+    //             <ul>
+    //               <li>&#8226; Delivered customer-focused service, assisting with sales, inventory tracking, and</li>
+    //               <li className="pl-3 pb-3">operational tasks, showcasing problem-solving and teamwork.</li>
+    //               <li>&#8226; Maintained store displays and optimized inventory organization to improve</li>
+    //               <li className="pl-3">efficiency and customer satisfaction in a fast-paced environment.</li>
+    //             </ul>
+    //           </div>
+    //         </div>
+
     //       </div>
-    //     ),
-    //   },
-      {
-        title: "Work Experience",
-        content: (
-            <div>
-                <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
-                    <div className="flex justify-between items-center">
-                    <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-                        <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-                            <span className="">Value Village</span>
-                        </div>
-                        <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-                            <span className="">Value Village</span>
-                        </div>
-                    </div>
-                    <div className="font-normal text-sm text-white pl-2">2023-current</div>
-                    </div>
-                </h1>
-                <div className="mb-8">
-                    <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
-                        {/* <div className="mb-2">
+    //     </div>
+    //   ),
+    // },
+    {
+      title: "Education",
+      content: (
+        <div>
+          <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
+            <div className="flex justify-between items-center">
+              <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+                <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                  <span className="">Seneca Polytechnic</span>
+                </div>
+                <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
+                  <span className="">Seneca Polytechnic</span>
+                </div>
+              </div>
+              <div className="font-normal text-sm text-white pl-2">2023-2026</div>
+            </div>
+          </h1>
+          <div className="mb-8">
+            <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
+              <div className="mb-2">
+                Focuses on web development, distributed programming, database administration, security, and various operating systems.
+              </div>
+              <div>
+                <ul>
+                  <li>&#8226; Earned
+                    {' '}<LinkPreview url="https://drive.google.com/file/d/1HuVhkY7SatDC38IEUpfrzJMX2pVo5RfK/view?usp=share_link" className="font-bold">
+                      President's Honour List
+                    </LinkPreview>{' '}
+                    in the 2nd & 3rd semester</li>
+                  <li>&#8226; Participated in Seneca's Housing Hackathon</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Work Experience",
+      content: (
+        <div>
+          <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
+            <div className="flex justify-between items-center">
+              <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+                <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                  <span className="">Value Village</span>
+                </div>
+                <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
+                  <span className="">Value Village</span>
+                </div>
+              </div>
+              <div className="font-normal text-sm text-white pl-2">2023-current</div>
+            </div>
+          </h1>
+          <div className="mb-8">
+            <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
+              {/* <div className="mb-2">
                             Focuses on web development, distributed programming, database administration, security, and various operating systems.
                         </div> */}
-                        <div>
-                            <ul>
-                                <li>&#8226; Delivered customer-focused service, assisting with sales, inventory tracking, and</li>
-                                <li className="pl-3 pb-3">operational tasks, showcasing problem-solving and teamwork.</li>
-                                <li>&#8226; Maintained store displays and optimized inventory organization to improve</li>
-                                <li className="pl-3">efficiency and customer satisfaction in a fast-paced environment.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
+              <div>
+                <ul>
+                  <li>&#8226; Delivered customer-focused service, assisting with sales, inventory tracking, and</li>
+                  <li className="pl-3 pb-3">operational tasks, showcasing problem-solving and teamwork.</li>
+                  <li>&#8226; Maintained store displays and optimized inventory organization to improve</li>
+                  <li className="pl-3">efficiency and customer satisfaction in a fast-paced environment.</li>
+                </ul>
+              </div>
             </div>
-        ),
-      },
-      {
-        title: "Education",
-        content: (
-            <div>
-                <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
-                    <div className="flex justify-between items-center">
-                    <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-                        <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-                            <span className="">Seneca Polytechnic</span>
-                        </div>
-                        <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-                            <span className="">Seneca Polytechnic</span>
-                        </div>
-                    </div>
-                    <div className="font-normal text-sm text-white pl-2">2023-2026</div>
-                    </div>
-                </h1>
-                <div className="mb-8">
-                    <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
-                        <div className="mb-2">
-                            Focuses on web development, distributed programming, database administration, security, and various operating systems.
-                        </div>
-                        <div>
-                            <ul>
-                                <li>&#8226; Earned
-                                    {' '}<LinkPreview url="https://drive.google.com/file/d/1HuVhkY7SatDC38IEUpfrzJMX2pVo5RfK/view?usp=share_link" className="font-bold">
-                                    President's Honour List
-                                    </LinkPreview>{' '}
-                                    in the 2nd & 3rd semester</li>
-                                <li>&#8226; Participated in Seneca's Housing Hackathon</li>
-                            </ul>
-                        </div>
-                    </div>
 
-                </div>
-            {/* <div className="grid grid-cols-2 gap-4">
-              <Image
-                src="https://assets.aceternity.com/pro/hero-sections.png"
-                alt="hero template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-              <Image
-                src="https://assets.aceternity.com/features-section.png"
-                alt="feature template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-              <Image
-                src="https://assets.aceternity.com/pro/bento-grids.png"
-                alt="bento template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-              <Image
-                src="https://assets.aceternity.com/cards.png"
-                alt="cards template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-            </div> */}
           </div>
-        ),
-      },
-    ];
-    return (
-      <div className="w-full">
-        <Timeline data={data} />
-      </div>
-    );
-  }
+        </div>
+      ),
+    },
+  ];
+  return (
+    <div className="w-full" id="timeline">
+      <CoverDemo word="Education & Experience" />
+      <Timeline data={data} />
+    </div>
+  );
+}

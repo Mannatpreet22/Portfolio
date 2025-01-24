@@ -9,8 +9,11 @@ import {
     IconBrain,
     IconBrandGithub,
     IconBrandLinkedin,
+    IconBulb,
+    IconClipboardList,
     IconFileDownload,
     IconHome,
+    IconMessage,
     IconRocket,
   } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
@@ -219,15 +222,21 @@ function IconContainer({
       {
         title: "Skills",
         icon: (
-          <IconBrain className="h-full w-full text-neutral-300" />
+          <IconBulb className="h-full w-full text-neutral-300" />
         ),
         href: "#",
       },
-     
       {
         title: "Projects",
         icon: (
           <IconRocket className="h-full w-full text-neutral-300" />
+        ),
+        href: "#",
+      },
+      {
+        title: "Contact Me",
+        icon: (
+          <IconBrain className="h-full w-full text-neutral-300" />
         ),
         href: "#",
       },

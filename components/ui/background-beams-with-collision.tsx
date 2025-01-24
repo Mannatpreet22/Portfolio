@@ -4,17 +4,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
 import { TextGenerateEffect } from "./text-generate-effect";
 import { FloatingDock } from "./floating-dock";
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 import {
-    IconBrain,
     IconBrandGithub,
     IconBrandLinkedin,
+    IconBulb,
+    IconCertificate,
     IconFileDownload,
     IconHome,
-    IconRocket,
+    IconMail,
+    IconTimeline,
   } from "@tabler/icons-react";
-import { div } from "framer-motion/client";
 import { NavbarDemo } from "../Navbar";
+import Link from "next/link";
 
 export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
     const links = [
@@ -23,47 +26,55 @@ export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
           icon: (
             <IconHome className="h-full w-full text-neutral-300" />
           ),
-          href: "#",
+          href: "#hero",
         },
         {
           title: "Skills",
           icon: (
-            <IconBrain className="h-full w-full text-neutral-300" />
+            <IconCertificate className="h-full w-full text-neutral-300" />
           ),
-          href: "#",
+          href: "#skills",
         },
        
         {
           title: "Projects",
           icon: (
-            <IconRocket className="h-full w-full text-neutral-300" />
+            <IconBulb className="h-full w-full text-neutral-300" />
           ),
-          href: "#",
+          href: "#projects",
         },
         {
-          title: "Download Resume",
-          icon: (
-            <IconFileDownload className="h-full w-full text-neutral-300" />
-          ),
-          href: "#",
-        },
+            title: "Timeline",
+            icon: (
+              <IconTimeline className="h-full w-full text-neutral-300" />
+            ),
+            href: "#timeline",
+          },
+        {
+            title: "Contact Me",
+            icon: (
+              <IconMail className="h-full w-full text-neutral-300" />
+            ),
+            href: "#contact",
+          },
+        
         {
           title: "LinkedIn",
           icon: (
             <IconBrandLinkedin className="h-full w-full text-neutral-300" />
           ),
-          href: "#",
+          href: "https://www.linkedin.com/in/mannatpreet-singh-khurana",
         },
         {
           title: "GitHub",
           icon: (
             <IconBrandGithub className="h-full w-full text-neutral-300" />
           ),
-          href: "#",
+          href: "https://github.com/Mannatpreet22",
         },
       ];
     return (
-        <div>
+        <div id="hero">
             <NavbarDemo />
         <BackgroundBeamsWithCollision className="flex flex-col min-h-full">
             <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-white font-sans tracking-tight">
@@ -79,7 +90,31 @@ export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
             </h2>
                 {/* {para} */}
                 <TextGenerateEffect words={'Aspiring Software Developer | Crafting Innovative Solutions with Precision and Passion'} />
-            <div className="h-1/4 flex items-center justify-center space-x-4 mt-1">
+                {/* <div className="bg-white">
+                    <a href="">https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000</a>
+                    <a href="https://www.linkedin.com/in/your-linkedin-handle" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-blue-600">
+                        <FaLinkedin size={30} />
+                        <span></span>
+                    </a>
+                    <a
+                        href="https://github.com/your-github-username"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 text-gray-800"
+                    >
+                        <FaGithub size={24} />
+                        <span></span>
+                    </a>
+                    <a
+                        href="mailto:yourname@gmail.com"
+                        className="flex items-center space-x-2 text-red-600"
+                    >
+                        <FaEnvelope size={30} />
+                        <span>Gmail</span>
+                    </a> */}
+                {/* </div> */}
+               
+            <div className="h-1/4 flex items-center justify-center space-x-4">
             
                 {/* <button type="button" className="text-gray-700 focus:outline-none focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5 bg-white hover:bg-gray-300 focus:ring-gray-700 border-gray-700">Hire Me</button>  */}
                 {/* <button className="p-[3px] relative">
@@ -88,8 +123,9 @@ export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
                         Hire Me
                     </div>
                 </button> */}
+                   
                 <button className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white text-white rounded-full font-bold transform hover:-translate-y-1 transition duration-400">
-                    Hire Me
+                    <a href="https://drive.google.com/file/d/1ZbCfqIbg5kTzJ5X9aSNgjqoZW4vjXVDF/view?usp=share_link">Download CV</a>
                 </button>
                 <span className="text-white"> | </span>
                 {/* <button className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white text-white rounded-full font-bold transform hover:-translate-y-1 transition duration-400">
@@ -104,7 +140,7 @@ export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
                 <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                     <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
                     <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-semibold text-white backdrop-blur-3xl">
-                        Project here
+                        <a href="#projects">Show my Projects</a>
                     </span>
                 </button>
             </div>
@@ -113,7 +149,7 @@ export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
             
         </BackgroundBeamsWithCollision>
 
-            <div className="z-50 flex justify-center items-end fixed w-full bg-slate-transparent h-[0%]">
+            <div className="z-50 flex justify-center items-end fixed w-full bg-slate-transparent h-1">
                 <FloatingDock
                     mobileClassName="translate-y-20" // only for demo, remove for production
                     items={links}

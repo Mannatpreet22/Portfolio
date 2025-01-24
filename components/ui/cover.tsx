@@ -212,6 +212,7 @@ export const Beam = ({
 
 export const CircleIcon = ({
   className,
+  // @ts-ignore
   delay,
 }: {
   className?: string;

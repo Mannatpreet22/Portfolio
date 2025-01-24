@@ -4,22 +4,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
 import { TextGenerateEffect } from "./text-generate-effect";
 import { FloatingDock } from "./floating-dock";
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 import {
     IconBrandGithub,
     IconBrandLinkedin,
     IconBulb,
     IconCertificate,
-    IconFileDownload,
     IconHome,
     IconMail,
     IconTimeline,
   } from "@tabler/icons-react";
 import { NavbarDemo } from "../Navbar";
-import Link from "next/link";
 
-export function BackgroundBeamsWithCollisionDemo({para}: {para?: string}) {
+export function BackgroundBeamsWithCollisionDemo() {
     const links = [
         {
           title: "Home",

@@ -163,11 +163,11 @@ export function TimelineDemo() {
               <div>
                 <ul>
                   <li>&#8226; Earned
-                    {' '}<LinkPreview url="https://drive.google.com/file/d/1HuVhkY7SatDC38IEUpfrzJMX2pVo5RfK/view?usp=share_link" className="font-bold">
-                      President's Honour List
-                    </LinkPreview>{' '}
+                    &apos;<LinkPreview url="https://drive.google.com/file/d/1HuVhkY7SatDC38IEUpfrzJMX2pVo5RfK/view?usp=share_link" className="font-bold">
+                      President&apos;s Honour List
+                    </LinkPreview>&apos;
                     in the 2nd & 3rd semester</li>
-                  <li>&#8226; Participated in Seneca's Housing Hackathon</li>
+                  <li>&#8226; Participated in Seneca&apos;s Housing Hackathon</li>
                 </ul>
               </div>
             </div>

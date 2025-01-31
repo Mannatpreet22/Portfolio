@@ -146,10 +146,11 @@ export function BackgroundBeamsWithCollisionDemo() {
             
         </BackgroundBeamsWithCollision>
 
-            <div className="z-50 flex justify-center items-end fixed w-full bg-slate-transparent h-1">
+            <div className="z-50 flex justify-center fixed w-full bottom-4 pointer-events-none">
                 <FloatingDock
                     mobileClassName="translate-y-20" // only for demo, remove for production
                     items={links}
+                    desktopClassName='pointer-events-auto'
                 />
             </div>
         </div>

@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Label } from "../ui/label";
 import { Input, Textarea } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { CoverDemo } from "./cover";
+import { Toast } from "./toast";
 
 export function SignupFormDemo() {
 
@@ -18,6 +19,31 @@ export function SignupFormDemo() {
   })
 
   const [status,setStatus] = useState<'idle'|'loading'|'success'|'error'>('idle')
+  const [toastVisible, setToastVisible] = useState(false)
+
+  useEffect(() => {
+    if (status !== 'idle') {
+      setToastVisible(true);
+    }
+  }, [status])
+
+  useEffect(() => {
+    if (toastVisible) {
+      const timer = setTimeout(() => {
+        setToastVisible(false)
+      }, 10000)
+      return () => clearTimeout(timer)
+    }
+  }, [toastVisible, status])
+
+  const getToastText = () => {
+    switch (status) {
+      case 'loading': return 'Sending your message...'
+      case 'success': return 'Message Sent!'
+      case 'error': return 'Oh-no something went wrong'
+      default: return ''
+    }
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({
@@ -42,7 +68,7 @@ export function SignupFormDemo() {
         throw new Error('Failed to submit message!')
       }
 
-      console.log("Message Sent!")
+      setFormData({ firstname: '', lastname: '', email: '', message: '' })
       setStatus('success')
     }
     catch (err: any) {
@@ -79,13 +105,18 @@ export function SignupFormDemo() {
         <button
           className="bg-gradient-to-br relative group/btn from-zinc-900 to-zinc-900  block bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
           type="submit"
+          disabled={status === 'loading'}
         >
-          Submit &rarr;
+          {status === 'loading' ? 'Sending...' : 'Submit →'}
           <BottomGradient />
         </button>
-        {status === "loading" && <p className="text-white">Sending your message...</p>}
-        {status === "success" && <p className="text-white">Message sent successfully!</p>}
-        {status === "error" && <p className="text-white">Oops! Something went wrong.</p>}
+        {toastVisible && (
+          <Toast
+            status={status}
+            text={getToastText()}
+            onClose={() => setToastVisible(false)}
+          />
+        )}
         <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       </form>
     </div>

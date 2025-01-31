@@ -15,7 +15,6 @@ export default function Home() {
       <TimelineDemo />
       {/* <CoverDemo word="Let's get in Touch"/> */}
       <SignupFormDemo />
-      <Footer />
     </div>
   );
 }

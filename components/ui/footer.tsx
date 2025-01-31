@@ -1,5 +1,6 @@
 'use client'
 
+import { CiMail } from "react-icons/ci";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
@@ -39,7 +40,7 @@ export default function Footer() {
           <a
             href="mailto:khurana.mannat22@gmail.com"
           >
-            <FaEnvelope size={24} />
+            <CiMail size={26} />
           </a>
         </nav>
       </div>

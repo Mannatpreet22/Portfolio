@@ -19,6 +19,7 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 
 import { JSX } from "react";
 import { CoverDemo } from "./cover";
+import { FaGithub, FaGithubSquare } from "react-icons/fa";
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -36,7 +37,7 @@ export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => {},
+  onCardClose: () => { },
   currentIndex: 0,
 });
 
@@ -177,7 +178,7 @@ export const Card = ({
   const handleClose = useCallback(() => {
     setOpen(false);
     onCardClose(index);
-  },[onCardClose, index])
+  }, [onCardClose, index])
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -194,11 +195,11 @@ export const Card = ({
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open,handleClose]);
+  }, [open, handleClose]);
 
   useOutsideClick(containerRef, () => handleClose());
 
-  
+
 
   return (
     <>
@@ -304,77 +305,91 @@ export const BlurImage = ({
 
 
 export function AppleCardsCarouselDemo() {
-    const cards = data.map((card, index) => (
-      <Card key={card.src} card={card} index={index} />
-    ));
-   
-    return (
-      <div className="w-full h-full py-5" id="projects">
-        <CoverDemo word="Projects"/>
-        <Carousel items={cards}/>
+  const cards = data.map((card, index) => (
+    <Card key={card.src} card={card} index={index} />
+  ));
+
+  return (
+    <div className="w-full h-full py-5" id="projects">
+      <CoverDemo word="Projects" />
+      <Carousel items={cards} />
+    </div>
+  );
+}
+
+const DummyContent = ({ heading, data, imageSrc }: { heading?: string, data?: string, imageSrc: string }) => {
+  return (
+    <div
+      key={"dummy-content"}
+      className="bg-neutral-800 p-8 md:p-14 rounded-3xl"
+    >
+
+      <Image
+        src={imageSrc ?? imageSrc}
+        alt="Macbook mockup from Aceternity UI"
+        height="600"
+        width="800"
+        className="rounded-lg h-full w-full mx-auto object-contain mb-5"
+      />
+      <div>
+        <p className="text-neutral-300 text-base md:text-xl font-sans max-w-4xl mx-auto">
+          <span className="font-bold text-neutral-200 mb-2">
+            {heading ? heading : 'Rendering heading'}
+          </span>{" "}
+          {data ? data : 'Wait for it.'}
+        </p>
+        <div className="mt-3 flex justify-end">
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          >
+            <FaGithub size={20} />
+            GitHub
+          </button>
+        </div>
       </div>
-    );
-  }
-   
-  const DummyContent = () => {
-    return (
-            <div
-              key={"dummy-content"}
-              className="bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
-            >
-              <p className="text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-                <span className="font-bold text-neutral-200">
-                  Section coming soon .
-                </span>{" "}
-                  Wait for it.
-              </p>
-              <Image
-                src="https://assets.aceternity.com/macbook.png"
-                alt="Macbook mockup from Aceternity UI"
-                height="500"
-                width="500"
-                className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-              />
-            </div>
-          );
-  };
-   
-  const data = [
-    {
-      category: "",
-      title: "Paybuddy",
-      src: "/paybuddy.jpg",
-      content: <DummyContent />,
-    },
-    {
+    </div>
+  );
+};
+
+const data = [
+  {
+    category: "",
+    title: "Paybuddy",
+    src: "/paybuddy.jpg",
+    content: <DummyContent heading="Paybuddy:" data="A wallet application that enables users to onramp money from their bank accounts into the
+wallet by implementing a bank mock server for smooth money transfers and webhook integration for real-time
+transaction confirmation." imageSrc="/Paybuddy_github_screenshot.png" />,
+  },
+  {
     //   category: "Electro Charge",
-      title: "Electro Charge",
-      src: "/electroCharge.jpeg",
-      content: <DummyContent />,
-    },
-    {
+    title: "Electro Charge",
+    src: "/electroCharge.jpeg",
+    content: <DummyContent heading='Electro Charge:' data='' imageSrc='' />,
+  },
+  {
     //   category: "Blogging Website",
-      title: "Blogging Website",
-      src: "/Blogging Website.jpeg",
-      content: <DummyContent />,
-    },
-   
-    {
+    title: "Blogging Website",
+    src: "/Blogging Website.jpeg",
+    content: <DummyContent heading='Blogging Website:' data='' imageSrc='' />,
+  },
+
+  {
     //   category: "Assembly Line Simulator",
-      title: "Assembly Line Simulator",
-      src: "/AssemblyLine2.jpg",
-      content: <DummyContent />,
-    },
-    {
+    title: "Assembly Line Simulator",
+    src: "/AssemblyLine2.jpg",
+    content: <DummyContent heading='Assembly Line Simulator:' imageSrc="" />,
+  },
+  {
     //   category: "Travel Booking",
-      title: "Travel Booking",
-      src: "/travel-booking.webp",
-      content: <DummyContent />,
-    },
-    {
+    title: "Travel Booking",
+    src: "/travel-booking.webp",
+    content: <DummyContent heading="Travel Booking:" imageSrc="" />,
+  },
+  {
     //   category: "Lego Sets",
-      title: "Lego Sets",
-      src: "/lego-sets.webp",
-      content: <DummyContent />,
-    },
-  ];
+    title: "Lego Sets",
+    src: "/lego-sets.webp",
+    content: <DummyContent heading="Lego Sets:" data="" imageSrc="" />,
+  },
+];

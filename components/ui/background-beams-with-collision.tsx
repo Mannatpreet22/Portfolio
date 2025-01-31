@@ -15,6 +15,8 @@ import {
     IconTimeline,
   } from "@tabler/icons-react";
 import { NavbarDemo } from "../Navbar";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { CiMail } from "react-icons/ci";
 
 export function BackgroundBeamsWithCollisionDemo() {
     const links = [
@@ -87,31 +89,10 @@ export function BackgroundBeamsWithCollisionDemo() {
             </h2>
                 {/* {para} */}
                 <TextGenerateEffect words={'Aspiring Software Developer | Crafting Innovative Solutions with Precision and Passion'} />
-                {/* <div className="bg-white">
-                    <a href="">https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000</a>
-                    <a href="https://www.linkedin.com/in/your-linkedin-handle" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-blue-600">
-                        <FaLinkedin size={30} />
-                        <span></span>
-                    </a>
-                    <a
-                        href="https://github.com/your-github-username"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-2 text-gray-800"
-                    >
-                        <FaGithub size={24} />
-                        <span></span>
-                    </a>
-                    <a
-                        href="mailto:yourname@gmail.com"
-                        className="flex items-center space-x-2 text-red-600"
-                    >
-                        <FaEnvelope size={30} />
-                        <span>Gmail</span>
-                    </a> */}
-                {/* </div> */}
+
+                       {/* Icons row below the generated text */}
                
-            <div className="h-1/4 flex items-center justify-center space-x-4">
+            <div className="h-1/6 flex items-center justify-center space-x-4 mb-2">
             
                 {/* <button type="button" className="text-gray-700 focus:outline-none focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5 bg-white hover:bg-gray-300 focus:ring-gray-700 border-gray-700">Hire Me</button>  */}
                 {/* <button className="p-[3px] relative">
@@ -141,7 +122,35 @@ export function BackgroundBeamsWithCollisionDemo() {
                     </span>
                 </button>
             </div>
-            
+            <div className="flex items-center justify-center space-x-4">
+         {/* LinkedIn Icon */}
+         <a
+           href="https://www.linkedin.com/in/mannatpreet-singh-khurana"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="text-white"
+         >
+           <FaLinkedin size={30} />
+         </a>
+         
+         {/* GitHub Icon */}
+         <a
+           href="https://github.com/Mannatpreet22"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="text-white"
+         >
+           <FaGithub size={30} />
+         </a>
+         
+         {/* Gmail Icon */}
+         <a
+           href="mailto:khurana.mannat22@gmail.com"
+           className="text-white"
+         >
+           <CiMail size={32} />
+         </a>
+      </div>
             
             
         </BackgroundBeamsWithCollision>
@@ -224,7 +233,7 @@ export const BackgroundBeamsWithCollision = ({
         <div
             ref={parentRef}
             className={cn(
-                "h-96 md:h-[44rem] bg-gradient-to-b from-neutral-950 to-neutral-900 relative flex items-center w-full justify-center overflow-hidden",
+                "h-96 md:h-screen bg-gradient-to-b from-neutral-950 to-neutral-900 relative flex items-center w-full justify-center overflow-hidden",
                 // h-screen if you want bigger
                 className
             )}
@@ -326,7 +335,7 @@ const CollisionMechanism = React.forwardRef<
                 setBeamKey((prevKey) => prevKey + 1);
             }, 2000);
         }
-    }, [collision]);
+    }, [collision])
 
     return (
         <>

@@ -1,7 +1,7 @@
 'use client'
 
 import { CiMail } from "react-icons/ci";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (

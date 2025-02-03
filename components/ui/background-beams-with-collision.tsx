@@ -17,6 +17,7 @@ import { NavbarDemo } from "../Navbar";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import { FaScrewdriverWrench } from "react-icons/fa6";
+import Image from "next/image";
 
 export function BackgroundBeamsWithCollisionDemo() {
     const links = [
@@ -90,22 +91,27 @@ export function BackgroundBeamsWithCollisionDemo() {
                 >
                     {/* Image Wrapper - Update the styling */}
                     <div className="shrink-0 flex items-center justify-center">
-                        {/* Gradient ring wrapper */}
-                        <div className="bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 rounded-full p-1 shadow-[0_0_25px_rgba(236,72,153,0.6)]">
-                            {/* Actual image */}
-                            <img
-                                src="/Mannatpreet.png"
-                                alt="Profile picture of Mannatpreet Singh Khurana"
-                                                        className="
-                                w-48 h-48
-                                md:w-72 md:h-72
-                                shadow-lg
-                                bg-slate-800
-                                rounded-full
-                            "
-                            />
+                    {/* Gradient ring wrapper */}
+                    <div
+                        className="
+                        bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500
+                        rounded-full p-1
+                        shadow-[0_0_25px_rgba(236,72,153,0.6)]
+                        "
+                    >
+                        {/* Container that defines the final size (48x48 -> 72x72 for larger screens) */}
+                        <div className="relative w-48 h-48 md:w-72 md:h-72 bg-slate-800 rounded-full">
+                        <Image
+                            src="/Mannatpreet.png"
+                            alt="Profile picture of Mannatpreet Singh Khurana"
+                            fill
+                            className="object-cover rounded-full shadow-lg"
+                            priority
+                        />
                         </div>
                     </div>
+                    </div>
+
                     
                 <div className="flex">
                 <div className="flex flex-col items-center md:items-start space-y-6">

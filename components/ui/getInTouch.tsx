@@ -102,13 +102,41 @@ export function SignupFormDemo() {
             <Textarea id="message" placeholder="your message"value={formData.message} onChange={handleChange}/>
         </LabelInputContainer>
 
+        {/* Replace the existing button code with this */}
         <button
-          className="bg-gradient-to-br relative group/btn from-zinc-900 to-zinc-900  block bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+          className="relative group inline-flex items-center justify-center px-8 py-3 w-full text-white transition-all duration-500 bg-transparent border-2 border-purple-500 rounded-full ease hover:bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 hover:border-transparent disabled:opacity-70 disabled:cursor-not-allowed"
           type="submit"
           disabled={status === 'loading'}
         >
-          {status === 'loading' ? 'Sending...' : 'Submit →'}
-          <BottomGradient />
+          <span className="relative flex items-center gap-2">
+            {status === 'loading' ? (
+              <>
+                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Sending Message...
+              </>
+            ) : (
+              <>
+                Send Message
+                <svg
+                  className="w-5 h-5 transition-transform duration-500 ease group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </>
+            )}
+          </span>
         </button>
         {toastVisible && (
           <Toast

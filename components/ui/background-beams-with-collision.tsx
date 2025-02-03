@@ -8,143 +8,188 @@ import { FloatingDock } from "./floating-dock";
 import {
     IconBrandGithub,
     IconBrandLinkedin,
-    IconBulb,
     IconCertificate,
     IconHome,
     IconMail,
     IconTimeline,
-  } from "@tabler/icons-react";
+} from "@tabler/icons-react";
 import { NavbarDemo } from "../Navbar";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { CiMail } from "react-icons/ci";
+import { FaScrewdriverWrench } from "react-icons/fa6";
 
 export function BackgroundBeamsWithCollisionDemo() {
     const links = [
         {
-          title: "Home",
-          icon: (
-            <IconHome className="h-full w-full text-neutral-300" />
-          ),
-          href: "#hero",
+            title: "Home",
+            icon: (
+                <IconHome className="h-full w-full text-neutral-300" />
+            ),
+            href: "#hero",
         },
         {
-          title: "Skills",
-          icon: (
-            <IconCertificate className="h-full w-full text-neutral-300" />
-          ),
-          href: "#skills",
+            title: "Skills",
+            icon: (
+                <IconCertificate className="h-full w-full text-neutral-300" />
+            ),
+            href: "#skills",
         },
-       
+
         {
-          title: "Projects",
-          icon: (
-            <IconBulb className="h-full w-full text-neutral-300" />
-          ),
-          href: "#projects",
+            title: "Projects",
+            icon: (
+                <FaScrewdriverWrench className="h-full w-full text-neutral-300" />
+            ),
+            href: "#projects",
         },
         {
             title: "Timeline",
             icon: (
-              <IconTimeline className="h-full w-full text-neutral-300" />
+                <IconTimeline className="h-full w-full text-neutral-300" />
             ),
             href: "#timeline",
-          },
+        },
         {
             title: "Contact Me",
             icon: (
-              <IconMail className="h-full w-full text-neutral-300" />
+                <IconMail className="h-full w-full text-neutral-300" />
             ),
             href: "#contact",
-          },
-        
+        },
+
         {
-          title: "LinkedIn",
-          icon: (
-            <IconBrandLinkedin className="h-full w-full text-neutral-300" />
-          ),
-          href: "https://www.linkedin.com/in/mannatpreet-singh-khurana",
+            title: "LinkedIn",
+            icon: (
+                <IconBrandLinkedin className="h-full w-full text-neutral-300" />
+            ),
+            href: "https://www.linkedin.com/in/mannatpreet-singh-khurana",
         },
         {
-          title: "GitHub",
-          icon: (
-            <IconBrandGithub className="h-full w-full text-neutral-300" />
-          ),
-          href: "https://github.com/Mannatpreet22",
+            title: "GitHub",
+            icon: (
+                <IconBrandGithub className="h-full w-full text-neutral-300" />
+            ),
+            href: "https://github.com/Mannatpreet22",
         },
-      ];
+    ];
     return (
         <div id="hero">
             <NavbarDemo />
-        <BackgroundBeamsWithCollision className="flex flex-col min-h-full">
-            <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-white font-sans tracking-tight">
-                Mannatpreet Singh{' '}
-                <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-                    <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-                        <span className=""> Khurana</span>
+            <BackgroundBeamsWithCollision className="flex flex-col min-h-full">
+                <div
+                    className="
+                    relative z-20
+                    flex flex-col md:flex-row
+                    items-center
+                    justify-center
+                    px-8 md:px-16 lg:px-24
+                    max-w-7xl
+                    mx-auto
+                    gap-16 md:gap-32
+                "
+                >
+                    {/* Image Wrapper - Update the styling */}
+                    <div className="shrink-0 flex items-center justify-center">
+                        {/* Gradient ring wrapper */}
+                        <div className="bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 rounded-full p-1 shadow-[0_0_25px_rgba(236,72,153,0.6)]">
+                            {/* Actual image */}
+                            <img
+                                src="/Mannatpreet.png"
+                                alt="Profile picture of Mannatpreet Singh Khurana"
+                                                        className="
+                                w-48 h-48
+                                md:w-72 md:h-72
+                                shadow-lg
+                                bg-slate-800
+                                rounded-full
+                            "
+                            />
+                        </div>
                     </div>
-                    <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-                        <span className=""> Khurana</span>
+                    
+                <div className="flex">
+                <div className="flex flex-col items-center md:items-start space-y-6">
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-center md:text-left text-white font-sans tracking-tight">
+                    Mannatpreet Singh{' '}
+                    <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+                        <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                            <span className=""> Khurana</span>
+                        </div>
+                        <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
+                            <span className=""> Khurana</span>
+                        </div>
                     </div>
-                </div>
-            </h2>
+                </h2>
                 {/* {para} */}
-                <TextGenerateEffect words={'Aspiring Software Developer | Crafting Innovative Solutions with Precision and Passion'} />
-                {/* <div className="bg-white">
-                    <a href="">https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000</a>
-                    <a href="https://www.linkedin.com/in/your-linkedin-handle" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-blue-600">
-                        <FaLinkedin size={30} />
-                        <span></span>
-                    </a>
+                <div className="max-w-2xl text-center md:text-left">
+                    <TextGenerateEffect words={'Aspiring Software Developer | Crafting Innovative Solutions with Precision and Passion'} />
+                </div>
+                {/* Icons row below the generated text */}
+
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mt-8">
+                    {/* Download CV Button */}
+                    <button className="relative inline-flex group">
+                        <div className="relative inline-flex items-center justify-center px-8 py-3 text-white transition-all duration-300 bg-transparent border-2 border-purple-500 rounded-full ease hover:bg-purple-500 hover:scale-105 transform">
+                            <span className="relative flex items-center gap-2">
+                                <svg className="w-5 h-5 transition-transform duration-300 ease group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+                                </svg>
+                                Download CV
+                            </span>
+                            <a href="https://drive.google.com/file/d/1ZbCfqIbg5kTzJ5X9aSNgjqoZW4vjXVDF/view?usp=share_link" className="absolute inset-0"></a>
+                        </div>
+                    </button>
+
+                    <span className="text-white font-light">|</span>
+
+                    {/* Show Projects Button */}
+                    <button className="relative group">
+                        <div className="relative inline-flex items-center justify-center px-8 py-3 text-white transition-all duration-500 bg-transparent border-2 border-pink-500 rounded-full ease hover:bg-gradient-to-r from-pink-500 via-purple-500 to-violet-500 hover:border-transparent">
+                            <span className="relative flex items-center gap-2">
+                                <svg className="w-5 h-5 transition-transform duration-500 ease group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+                                </svg>
+                                Show Projects
+                            </span>
+                            <a href="#projects" className="absolute inset-0"></a>
+                        </div>
+                    </button>
+                </div>
+                
+                </div>
+                <div className="flex flex-col justify-center items-center gap-8 mt-4">
+                    {/* LinkedIn Icon */}
                     <a
-                        href="https://github.com/your-github-username"
+                        href="https://www.linkedin.com/in/mannatpreet-singh-khurana"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-2 text-gray-800"
+                        className="text-white"
                     >
-                        <FaGithub size={24} />
-                        <span></span>
+                        <FaLinkedin size={30} />
                     </a>
+
+                    {/* GitHub Icon */}
                     <a
-                        href="mailto:yourname@gmail.com"
-                        className="flex items-center space-x-2 text-red-600"
+                        href="https://github.com/Mannatpreet22"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white"
                     >
-                        <FaEnvelope size={30} />
-                        <span>Gmail</span>
-                    </a> */}
-                {/* </div> */}
-               
-            <div className="h-1/4 flex items-center justify-center space-x-4">
-            
-                {/* <button type="button" className="text-gray-700 focus:outline-none focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5 bg-white hover:bg-gray-300 focus:ring-gray-700 border-gray-700">Hire Me</button>  */}
-                {/* <button className="p-[3px] relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-                    <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-                        Hire Me
-                    </div>
-                </button> */}
-                   
-                <button className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white text-white rounded-full font-bold transform hover:-translate-y-1 transition duration-400">
-                    <a href="https://drive.google.com/file/d/1ZbCfqIbg5kTzJ5X9aSNgjqoZW4vjXVDF/view?usp=share_link">Download CV</a>
-                </button>
-                <span className="text-white"> | </span>
-                {/* <button className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white text-white rounded-full font-bold transform hover:-translate-y-1 transition duration-400">
-                    Projects
-                </button> */}
-                {/* <button className="p-[3px] relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
-                    <div className="px-8 py-2  bg-black rounded-full  relative group transition duration-200 text-white hover:bg-transparent">
-                        Projects
-                    </div>
-                </button> */}
-                <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-semibold text-white backdrop-blur-3xl">
-                        <a href="#projects">Show my Projects</a>
-                    </span>
-                </button>
-            </div>
-            
-            
-            
-        </BackgroundBeamsWithCollision>
+                        <FaGithub size={30} />
+                    </a>
+
+                    {/* Gmail Icon */}
+                    <a
+                        href="mailto:khurana.mannat22@gmail.com"
+                        className="text-white"
+                    >
+                        <CiMail size={32} />
+                    </a>
+                </div>
+                </div>
+                
+                </div>
+            </BackgroundBeamsWithCollision>
 
             <div className="z-50 flex justify-center fixed w-full bottom-4 pointer-events-none">
                 <FloatingDock
@@ -224,12 +269,12 @@ export const BackgroundBeamsWithCollision = ({
         <div
             ref={parentRef}
             className={cn(
-                "h-96 md:h-[44rem] bg-gradient-to-b from-neutral-950 to-neutral-900 relative flex items-center w-full justify-center overflow-hidden",
+                "h-90 md:h-screen bg-gradient-to-b from-neutral-950 to-neutral-900 relative flex items-center w-full justify-center overflow-hidden",
                 // h-screen if you want bigger
                 className
             )}
         >
-            
+
             {beams.map((beam) => (
                 <CollisionMechanism
                     key={beam.initialX + "beam-idx"}
@@ -326,7 +371,7 @@ const CollisionMechanism = React.forwardRef<
                 setBeamKey((prevKey) => prevKey + 1);
             }, 2000);
         }
-    }, [collision]);
+    }, [collision])
 
     return (
         <>

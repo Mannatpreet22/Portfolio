@@ -142,7 +142,7 @@ export function BackgroundBeamsWithCollisionDemo() {
                                 </svg>
                                 Download CV
                             </span>
-                            <a href="https://drive.google.com/file/d/1ZbCfqIbg5kTzJ5X9aSNgjqoZW4vjXVDF/view?usp=share_link" className="absolute inset-0"></a>
+                            <a href="https://drive.google.com/file/d/14vwDTN5ELGVkvTis22Ar_v3bTmMYvWHM/view?usp=sharing" className="absolute inset-0"></a>
                         </div>
                     </button>
 

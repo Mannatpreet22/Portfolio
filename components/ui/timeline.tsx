@@ -45,7 +45,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             My journey so far.
           </h2>
           <p className="text-neutral-300 text-sm md:text-base max-w-2xl">
-            I am an aspiring software developer passionate about creating impactful solutions and driving innovation in the software industry, leveraging skills in C++, Python, and full-stack development to build efficient and scalable projects.
+          I’m a full-stack developer studying Computer Programming & Analysis at Seneca Polytechnic. I started with solid CS foundations in C/C++, then moved into modern web—TypeScript/JavaScript, Node/Express, and Next.js/React—paired with PostgreSQL/Prisma and Redis. Along the way I picked up Docker, Nginx, CI/CD, and cloud deploys (AWS, DigitalOcean, Vercel), with a focus on security and reliability (JWT/RBAC, input validation, rate limiting, health checks). Lately I’m exploring agentic AI (LangGraph, CrewAI) and RAG to bring intelligent behavior into real apps—always aiming for clean architecture, readable code, and fast iteration.
           </p>
         </div>
         <Image
@@ -102,42 +102,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
 export function TimelineDemo() {
   const data = [
-    // {
-    //   title: "Work Experience",
-    //   content: (
-    //     <div>
-    //       <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
-    //         <div className="flex justify-between items-center">
-    //           <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-    //             <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-    //               <span className="">Value Village</span>
-    //             </div>
-    //             <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-    //               <span className="">Value Village</span>
-    //             </div>
-    //           </div>
-    //           <div className="font-normal text-sm text-white pl-2">2023-current</div>
-    //         </div>
-    //       </h1>
-    //       <div className="mb-8">
-    //         <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
-    //           {/* <div className="mb-2">
-    //                         Focuses on web development, distributed programming, database administration, security, and various operating systems.
-    //                     </div> */}
-    //           <div>
-    //             <ul>
-    //               <li>&#8226; Delivered customer-focused service, assisting with sales, inventory tracking, and</li>
-    //               <li className="pl-3 pb-3">operational tasks, showcasing problem-solving and teamwork.</li>
-    //               <li>&#8226; Maintained store displays and optimized inventory organization to improve</li>
-    //               <li className="pl-3">efficiency and customer satisfaction in a fast-paced environment.</li>
-    //             </ul>
-    //           </div>
-    //         </div>
-
-    //       </div>
-    //     </div>
-    //   ),
-    // },
     {
       title: "Education",
       content: (
@@ -212,6 +176,77 @@ export function TimelineDemo() {
         </div>
       ),
     },
+    {
+      title: "",
+      content: (
+        <div>
+          <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
+            <div className="flex justify-between items-center">
+              <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+                <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                  <span className="">Team Lead</span>
+                </div>
+                <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
+                  <span className="">Team Lead</span>
+                </div>
+              </div>
+              <div className="font-normal text-sm text-white pl-2">Feb 2024 - March 2024</div>
+            </div>
+          </h1>
+          <div className="mb-8">
+            <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
+              <div>
+                <ul>
+                  <li>&#8226; Led a team of developers to work on ZilBil, a roommate matching app aimed at</li>
+                  <li className="pl-3">solving housing crisis in Canada.</li>
+                  <li>&#8226; Gained hands-on experience in React, Node.js, MongoDB, and guided the team</li>
+                  <li className="pl-3">through development from ideation to deployment.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Licenses & Certifications",
+      content: (
+        <div>
+          <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
+            <div className="flex justify-between items-center">
+              <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+                <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                  <span className="">LangGraph in Action:Develop Advanced Al Agents with LLMs</span>
+                </div>
+                <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
+                  <span className="">LangGraph in Action:Develop Advanced Al Agents with LLMs</span>
+                </div>
+              </div>
+              <div className="font-normal text-sm text-white pl-2">August 2025</div>
+            </div>
+          </h1>
+          <div className="mb-8">
+            <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
+              <div className="mb-2">
+              Earned
+                    &apos;<LinkPreview url="https://www.udemy.com/certificate/UC-dd1f13ed-f9a5-4ec3-b1d0-82dbb0c817fc/" className="font-bold">
+                      Udemy Certificate
+                    </LinkPreview>&apos;
+                    in the LangGraph in Action:Develop Advanced Al Agents with LLMs course
+              </div>
+              <div>
+                <ul>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      ),
+    },
+    
+    
   ];
   return (
     <div className="w-full" id="timeline">

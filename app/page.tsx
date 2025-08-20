@@ -10,9 +10,7 @@ export default function Home() {
       <BackgroundBeamsWithCollisionDemo />
       <SkillCard />
       <AppleCardsCarouselDemo />
-      {/* <CoverDemo word="Education & Experience"/> */}
       <TimelineDemo />
-      {/* <CoverDemo word="Let's get in Touch"/> */}
       <SignupFormDemo />
     </div>
   );

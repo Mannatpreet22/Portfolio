@@ -442,4 +442,15 @@ const data = [
       onClick={() => window.open('https://github.com/Mannatpreet22/Exchange-Application', '_blank')}
     />,
   },
+  {
+    title: "HTTP Server",
+    src: "/http-server.jpg",
+    content: <DummyContent 
+      heading="HTTP Server:"
+      data="A custom HTTP server built from scratch in Golang featuring connection pooling, persistent connections, comprehensive HTTP status codes, and advanced networking capabilities. Demonstrates deep understanding of HTTP protocol implementation and low-level network programming." 
+      imageSrc="/http-server-screenshot.png"
+      live={false}
+      onClick={() => window.open('https://github.com/Mannatpreet22/Build-your-own-HTTP-Server', '_blank')}
+    />,
+  }
 ];

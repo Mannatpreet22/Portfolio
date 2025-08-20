@@ -34,13 +34,13 @@ export function SkillCard() {
         {
           title: "Programming Languages",
           description:
-            "Proficient in C, C++, Python, JavaScript, TypeScript, and SQL for versatile software development.",
+            "Proficient in C, C++, Python, Golang, JavaScript, TypeScript, and SQL for versatile software development.",
           icon: <IconCode />,
         },
         {
           title: "Modern Web Development",
           description:
-            "Designing responsive and user-friendly interfaces with HTML, CSS, and modern frameworks like Tailwind CSS and DaisyUI.",
+            "Designing responsive and user-friendly interfaces with Next.js, React.js, and modern frameworks like Tailwind CSS, Shadcn UI, and Framer Motion.",
           icon: <IconBrowser />,
         },
         {
@@ -52,7 +52,7 @@ export function SkillCard() {
         {
           title: "Backend Development",
           description:
-            "Developing RESTful APIs and handling business logic with Node.js and Prisma.",
+            "RESTful APIs with Node.js & Golang, microservices with nginx, Docker deployment, CI/CD pipelines, AWS & Digital Ocean.",
           icon: <IconServer />,
         },
         {

@@ -19,7 +19,7 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 
 import { JSX } from "react";
 import { CoverDemo } from "./cover";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaRocket } from "react-icons/fa";
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -317,7 +317,7 @@ export function AppleCardsCarouselDemo() {
   );
 }
 
-const DummyContent = ({ heading, data, imageSrc }: { heading?: string, data?: string, imageSrc: string }) => {
+const DummyContent = ({ heading, data, imageSrc, live, onClick }: { heading?: string, data?: string, imageSrc: string, live?: boolean, onClick?: () => void }) => {
   return (
     <div
       key={"dummy-content"}
@@ -341,10 +341,20 @@ const DummyContent = ({ heading, data, imageSrc }: { heading?: string, data?: st
         <div className="mt-3 flex justify-end">
           <button
             type="button"
+            onClick={onClick}
             className="inline-flex items-center gap-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           >
-            <FaGithub size={20} />
-            GitHub
+            {live ? (
+              <>
+                <span><FaRocket /></span>
+                Live Demo
+              </>
+            ) : (
+              <>
+                <FaGithub size={20} />
+                GitHub
+              </>
+            )}
           </button>
         </div>
       </div>
@@ -355,41 +365,81 @@ const DummyContent = ({ heading, data, imageSrc }: { heading?: string, data?: st
 const data = [
   {
     category: "",
+    title: "CodeQuest",
+    src: "/codequest.avif",
+    content: <DummyContent 
+      heading="CodeQuest:" 
+      data="A competitive programming platform on microservices behind Nginx with SSL and custom domains." 
+      imageSrc="/codequest_screenshot.png" 
+      live={true}
+      onClick={() => window.open('https://codequest.mkhurana.com', '_blank')}
+    />,
+  },
+  {
+    category: "",
     title: "Paybuddy",
     src: "/paybuddy.jpg",
-    content: <DummyContent heading="Paybuddy:" data="A wallet application that enables users to onramp money from their bank accounts into the
-wallet by implementing a bank mock server for smooth money transfers and webhook integration for real-time
-transaction confirmation." imageSrc="/Paybuddy_github_screenshot.png" />,
+    content: <DummyContent 
+      heading="Paybuddy:" 
+      data="A wallet application that enables users to onramp money from their bank accounts into the wallet by implementing a bank mock server for smooth money transfers and webhook integration for real-time transaction confirmation." 
+      imageSrc="/Paybuddy_github_screenshot.png" 
+      live={false}
+      onClick={() => window.open('https://github.com/Mannatpreet22/Paybuddy', '_blank')}
+    />,
   },
   {
-    //   category: "Electro Charge",
     title: "Electro Charge",
     src: "/electroCharge.jpeg",
-    content: <DummyContent heading='Electro Charge:' data='' imageSrc='' />,
+    content: <DummyContent 
+      heading='Electro Charge:' 
+      data='A web application that allows users to find the nearest charging station in their area.'
+      imageSrc='/electro_charge_screenshot.png' 
+      live={false}
+      onClick={() => window.open('https://github.com/Mannatpreet22/Electro-Charge', '_blank')}
+    />,
   },
   {
-    //   category: "Blogging Website",
     title: "Blogging Website",
     src: "/Blogging Website.jpeg",
-    content: <DummyContent heading='Blogging Website:' data='' imageSrc='' />,
+    content: <DummyContent 
+      heading='Blogging Website:' 
+      data='A full-stack blogging platform built with react and node.js in typescript. Features user authentication, real-time blog creation and editing, responsive design, and a clean dashboard for managing personal blog posts. Users can sign up, create accounts, write and publish blogs, edit existing posts, and delete content with an intuitive admin interface.' 
+      imageSrc='/blogs_screenshot.png' 
+      live={true}
+      onClick={() => window.open('https://blogs.mkhurana.com/signup', '_blank')}
+    />,
   },
-
   {
-    //   category: "Assembly Line Simulator",
     title: "Assembly Line Simulator",
     src: "/AssemblyLine2.jpg",
-    content: <DummyContent heading='Assembly Line Simulator:' imageSrc="" />,
+    content: <DummyContent 
+      heading='Assembly Line Simulator:'
+      data='The simulation models a manufacturing assembly line where customer orders are processed sequentially through various workstations. Each workstation in the assembly line is responsible for adding a specific component to an order, mimicking real-world factory production lines.' 
+      imageSrc="/assembly_line_simulator.png" 
+      live={false}
+      onClick={() => window.open('https://github.com/Mannatpreet22/Assembly-Line-Simulator', '_blank')}
+    />,
   },
   {
-    //   category: "Travel Booking",
-    title: "Travel Booking",
-    src: "/travel-booking.webp",
-    content: <DummyContent heading="Travel Booking:" imageSrc="" />,
-  },
-  {
-    //   category: "Lego Sets",
     title: "Lego Sets",
     src: "/lego-sets.webp",
-    content: <DummyContent heading="Lego Sets:" data="" imageSrc="" />,
+    content: <DummyContent 
+      heading="Lego Sets:"
+      data="The Lego Collection Web App is a dynamic web application built using Node.js, Express.js, HTML, CSS, Tailwind CSS, Sequelize with PostgreSQL, and user authentication functionalities. It allows users to explore, manage, and interact with a collection of Lego sets. The application now includes robust user authentication, allowing users to create accounts, log in, and manage their Lego collections securely." 
+      imageSrc="/lego_set_screenshot.png"
+      live={true}
+      onClick={() => window.open('https://legosets.mkhurana.com', '_blank')}
+    />,
+  },
+  {
+    title: "Exchange Application",
+    src: "/exchange-application.jpg",
+    content: <DummyContent 
+      heading="Exchange Application:"
+      data="A comprehensive trading platform, featuring real-time cryptocurrency trading interfaces, portfolio management dashboards, order books, and advanced trading tools. The application simulates a professional crypto exchange experience with responsive design and intuitive user interface." 
+      imageSrc="/exchange-application-screenshot.png"
+      live={false}
+      onClick={() => window.open('https://github.com/Mannatpreet22/Exchange-Application', '_blank')}
+    />,
   },
 ];

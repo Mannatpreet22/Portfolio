@@ -1,8 +1,3 @@
-/**
- * Note: Use position fixed according to your needs
- * Desktop navbar is better positioned at the bottom
- * Mobile navbar is better positioned at bottom right.
- **/
 'use client'
 import React from "react";
 import {
@@ -263,7 +258,6 @@ function IconContainer({
     return (
       <div className="z-50 flex items-end justify-center fixed w-full bg-transparent h-14">
         <FloatingDock
-          mobileClassName="translate-y-20" // only for demo, remove for production
           items={links}
         />
       </div>

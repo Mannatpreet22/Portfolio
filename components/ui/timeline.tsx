@@ -1,9 +1,5 @@
 "use client";
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { LinkPreview } from "./link-preview";
@@ -35,17 +31,23 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div
-      className="w-full bg-inherit font-sans md:px-10"
-      ref={containerRef}
-    >
+    <div className="w-full bg-inherit font-sans md:px-10" ref={containerRef}>
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 flex justify-between items-center">
         <div>
           <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl">
             My journey so far.
           </h2>
           <p className="text-neutral-300 text-sm md:text-base max-w-2xl">
-          I’m a full-stack developer studying Computer Programming & Analysis at Seneca Polytechnic. I started with solid CS foundations in C/C++, then moved into modern web—TypeScript/JavaScript, Node/Express, and Next.js/React—paired with PostgreSQL/Prisma and Redis. Along the way I picked up Docker, Nginx, CI/CD, and cloud deploys (AWS, DigitalOcean, Vercel), with a focus on security and reliability (JWT/RBAC, input validation, rate limiting, health checks). Lately I’m exploring agentic AI (LangGraph, CrewAI) and RAG to bring intelligent behavior into real apps—always aiming for clean architecture, readable code, and fast iteration.
+            I’m a full-stack developer studying Computer Programming & Analysis
+            at Seneca Polytechnic. I started with solid CS foundations in C/C++,
+            then moved into modern web—TypeScript/JavaScript, Node/Express, and
+            Next.js/React—paired with PostgreSQL/Prisma and Redis. Along the way
+            I picked up Docker, Nginx, CI/CD, and cloud deploys (AWS,
+            DigitalOcean, Vercel), with a focus on security and reliability
+            (JWT/RBAC, input validation, rate limiting, health checks). Lately
+            I’m exploring agentic AI (LangGraph, CrewAI) and RAG to bring
+            intelligent behavior into real apps—always aiming for clean
+            architecture, readable code, and fast iteration.
           </p>
         </div>
         <Image
@@ -99,7 +101,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   );
 };
 
-
 export function TimelineDemo() {
   const data = [
     {
@@ -116,26 +117,35 @@ export function TimelineDemo() {
                   <span className="">Seneca Polytechnic</span>
                 </div>
               </div>
-              <div className="font-normal text-sm text-white pl-2">2023-2026</div>
+              <div className="font-normal text-sm text-white pl-2">
+                2023-2026
+              </div>
             </div>
           </h1>
           <div className="mb-8">
             <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
               <div className="mb-2">
-                Focuses on web development, distributed programming, database administration, security, and various operating systems.
+                Focuses on web development, distributed programming, database
+                administration, security, and various operating systems.
               </div>
               <div>
                 <ul>
-                  <li>&#8226; Earned
-                    &apos;<LinkPreview url="https://drive.google.com/file/d/1HuVhkY7SatDC38IEUpfrzJMX2pVo5RfK/view?usp=share_link" className="font-bold">
+                  <li>
+                    &#8226; Earned &apos;
+                    <LinkPreview
+                      url="https://drive.google.com/file/d/1HuVhkY7SatDC38IEUpfrzJMX2pVo5RfK/view?usp=share_link"
+                      className="font-bold"
+                    >
                       President&apos;s Honour List
-                    </LinkPreview>&apos;
-                    in the 2nd & 3rd semester</li>
-                  <li>&#8226; Participated in Seneca&apos;s Housing Hackathon</li>
+                    </LinkPreview>
+                    &apos; in the 2nd & 3rd semester
+                  </li>
+                  <li>
+                    &#8226; Participated in Seneca&apos;s Housing Hackathon
+                  </li>
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
       ),
@@ -154,7 +164,9 @@ export function TimelineDemo() {
                   <span className="">Value Village</span>
                 </div>
               </div>
-              <div className="font-normal text-sm text-white pl-2">2023-current</div>
+              <div className="font-normal text-sm text-white pl-2">
+                2023-current
+              </div>
             </div>
           </h1>
           <div className="mb-8">
@@ -164,14 +176,70 @@ export function TimelineDemo() {
                         </div> */}
               <div>
                 <ul>
-                  <li>&#8226; Delivered customer-focused service, assisting with sales, inventory tracking, and</li>
-                  <li className="pl-3 pb-3">operational tasks, showcasing problem-solving and teamwork.</li>
-                  <li>&#8226; Maintained store displays and optimized inventory organization to improve</li>
-                  <li className="pl-3">efficiency and customer satisfaction in a fast-paced environment.</li>
+                  <li>
+                    &#8226; Delivered customer-focused service, assisting with
+                    sales, inventory tracking, and
+                  </li>
+                  <li className="pl-3 pb-3">
+                    operational tasks, showcasing problem-solving and teamwork.
+                  </li>
+                  <li>
+                    &#8226; Maintained store displays and optimized inventory
+                    organization to improve
+                  </li>
+                  <li className="pl-3">
+                    efficiency and customer satisfaction in a fast-paced
+                    environment.
+                  </li>
                 </ul>
               </div>
             </div>
-
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "",
+      content: (
+        <div>
+          <h1 className="text-neutral-200 font-semibold text-3xl mb-4">
+            <div className="flex justify-between items-center">
+              <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+                <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
+                  <span className="">Peer Tutor - Volunteer</span>
+                </div>
+                <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
+                  <span className="">Peer Tutor - Volunteer</span>
+                </div>
+              </div>
+              <div className="font-normal text-sm text-white pl-2">
+                March 2024 - Present
+              </div>
+            </div>
+          </h1>
+          <div className="mb-8">
+            <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
+              <div>
+                <ul>
+                  <li>
+                    &#8226; Provided one-on-one and group tutoring sessions to
+                    support students in various
+                  </li>
+                  <li className="pl-3">
+                    subjects understanding complex course materials, improving
+                    academic performance across various subjects.
+                  </li>
+                  <li>
+                    &#8226; Guided students on effective study techniques, time
+                    management, and exam
+                  </li>
+                  <li className="pl-3">
+                    preparation strategies, fostering independent learning and
+                    academic success.
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       ),
@@ -190,17 +258,27 @@ export function TimelineDemo() {
                   <span className="">Team Lead</span>
                 </div>
               </div>
-              <div className="font-normal text-sm text-white pl-2">Feb 2024 - March 2024</div>
+              <div className="font-normal text-sm text-white pl-2">
+                Feb 2024 - March 2024
+              </div>
             </div>
           </h1>
           <div className="mb-8">
             <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
               <div>
                 <ul>
-                  <li>&#8226; Led a team of developers to work on ZilBil, a roommate matching app aimed at</li>
+                  <li>
+                    &#8226; Led a team of developers to work on ZilBil, a
+                    roommate matching app aimed at
+                  </li>
                   <li className="pl-3">solving housing crisis in Canada.</li>
-                  <li>&#8226; Gained hands-on experience in React, Node.js, MongoDB, and guided the team</li>
-                  <li className="pl-3">through development from ideation to deployment.</li>
+                  <li>
+                    &#8226; Gained hands-on experience in React, Node.js,
+                    MongoDB, and guided the team
+                  </li>
+                  <li className="pl-3">
+                    through development from ideation to deployment.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -216,23 +294,33 @@ export function TimelineDemo() {
             <div className="flex justify-between items-center">
               <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
                 <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-                  <span className="">LangGraph in Action:Develop Advanced Al Agents with LLMs</span>
+                  <span className="">
+                    LangGraph in Action:Develop Advanced Al Agents with LLMs
+                  </span>
                 </div>
                 <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-                  <span className="">LangGraph in Action:Develop Advanced Al Agents with LLMs</span>
+                  <span className="">
+                    LangGraph in Action:Develop Advanced Al Agents with LLMs
+                  </span>
                 </div>
               </div>
-              <div className="font-normal text-sm text-white pl-2">August 2025</div>
+              <div className="font-normal text-sm text-white pl-2">
+                August 2025
+              </div>
             </div>
           </h1>
           <div className="mb-8">
             <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
               <div className="mb-2">
-              Earned
-                    &apos;<LinkPreview url="https://www.udemy.com/certificate/UC-dd1f13ed-f9a5-4ec3-b1d0-82dbb0c817fc/" className="font-bold">
-                      Udemy Certificate
-                    </LinkPreview>&apos;
-                    in the LangGraph in Action:Develop Advanced Al Agents with LLMs course
+                Earned &apos;
+                <LinkPreview
+                  url="https://www.udemy.com/certificate/UC-dd1f13ed-f9a5-4ec3-b1d0-82dbb0c817fc/"
+                  className="font-bold"
+                >
+                  Udemy Certificate
+                </LinkPreview>
+                &apos; in the LangGraph in Action:Develop Advanced Al Agents
+                with LLMs course
               </div>
               <div>
                 <ul>
@@ -240,13 +328,10 @@ export function TimelineDemo() {
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
       ),
     },
-    
-    
   ];
   return (
     <div className="w-full" id="timeline">

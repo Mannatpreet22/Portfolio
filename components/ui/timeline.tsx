@@ -38,16 +38,16 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             My journey so far.
           </h2>
           <p className="text-neutral-300 text-sm md:text-base max-w-2xl">
-            I’m a full-stack developer studying Computer Programming & Analysis
-            at Seneca Polytechnic. I started with solid CS foundations in C/C++,
-            then moved into modern web—TypeScript/JavaScript, Node/Express, and
-            Next.js/React—paired with PostgreSQL/Prisma and Redis. Along the way
-            I picked up Docker, Nginx, CI/CD, and cloud deploys (AWS,
-            DigitalOcean, Vercel), with a focus on security and reliability
-            (JWT/RBAC, input validation, rate limiting, health checks). Lately
-            I’m exploring agentic AI (LangGraph, CrewAI) and RAG to bring
-            intelligent behavior into real apps—always aiming for clean
-            architecture, readable code, and fast iteration.
+            I’m a software developer studying Computer Programming & Analysis at
+            Seneca Polytechnic and currently working as a Software Developer
+            Intern at Stikbook. My recent work has focused on shipping and
+            stabilizing production features across React Native apps, Spring
+            Boot microservices, Redis-backed systems, and PostgreSQL data
+            flows. I enjoy debugging real product issues, improving performance
+            in media-heavy experiences, and designing backend services that
+            stay reliable under growth. Across projects and internships, I tend
+            to work closest to product-critical paths: feed systems, search,
+            chat, rewards, uploads, and cloud infrastructure.
           </p>
         </div>
         <Image
@@ -158,39 +158,24 @@ export function TimelineDemo() {
             <div className="flex justify-between items-center">
               <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
                 <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-                  <span className="">Value Village</span>
+                  <span className="">Stikbook INC</span>
                 </div>
                 <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-                  <span className="">Value Village</span>
+                  <span className="">Stikbook INC</span>
                 </div>
               </div>
-              <div className="font-normal text-sm text-white pl-2">
-                2023-current
-              </div>
+              <div className="font-normal text-sm text-white pl-2">Jan 2026 - Present</div>
             </div>
           </h1>
           <div className="mb-8">
             <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
-              {/* <div className="mb-2">
-                            Focuses on web development, distributed programming, database administration, security, and various operating systems.
-                        </div> */}
               <div>
                 <ul>
-                  <li>
-                    &#8226; Delivered customer-focused service, assisting with
-                    sales, inventory tracking, and
-                  </li>
-                  <li className="pl-3 pb-3">
-                    operational tasks, showcasing problem-solving and teamwork.
-                  </li>
-                  <li>
-                    &#8226; Maintained store displays and optimized inventory
-                    organization to improve
-                  </li>
-                  <li className="pl-3">
-                    efficiency and customer satisfaction in a fast-paced
-                    environment.
-                  </li>
+                  <li>&#8226; Reworked the <span className="font-semibold text-white">like/dislike pipeline</span> and core <span className="font-semibold text-white">feed behavior</span> across frontend and backend, eliminating duplicate API calls and fixing shared state bugs where actions on one post affected others.</li>
+                  <li>&#8226; Restored broken <span className="font-semibold text-white">chat</span> and <span className="font-semibold text-white">search flows</span> by debugging backend services and fixing integration issues, bringing key product experiences back to stable day-to-day use.</li>
+                  <li>&#8226; Upgraded the app from <span className="font-semibold text-white">Expo SDK 53 to 54</span> and migrated video playback from <span className="font-semibold text-white">expo-video</span> to <span className="font-semibold text-white">react-native-video</span>, resolving major Android and iOS crashes and improving media reliability.</li>
+                  <li>&#8226; Built the <span className="font-semibold text-white">StikCoins</span> feature from scratch, including frontend flows, backend logic, and a dedicated <span className="font-semibold text-white">rewards microservice</span> integrated with notification and content services.</li>
+                  <li>&#8226; Rewrote a non-functional <span className="font-semibold text-white">compliance engine</span> and improved the upload pipeline to support large media transfers to <span className="font-semibold text-white">S3</span> without app crashes, while also contributing during <span className="font-semibold text-white">AWS region migration</span>.</li>
                 </ul>
               </div>
             </div>
@@ -221,22 +206,8 @@ export function TimelineDemo() {
             <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
               <div>
                 <ul>
-                  <li>
-                    &#8226; Provided one-on-one and group tutoring sessions to
-                    support students in various
-                  </li>
-                  <li className="pl-3">
-                    subjects understanding complex course materials, improving
-                    academic performance across various subjects.
-                  </li>
-                  <li>
-                    &#8226; Guided students on effective study techniques, time
-                    management, and exam
-                  </li>
-                  <li className="pl-3">
-                    preparation strategies, fostering independent learning and
-                    academic success.
-                  </li>
+                  <li>&#8226; Provided one-on-one and group tutoring sessions to support students with complex course materials and improve academic performance across multiple subjects.</li>
+                  <li>&#8226; Guided students on study techniques, time management, and exam preparation while encouraging independent learning and confidence.</li>
                 </ul>
               </div>
             </div>
@@ -252,33 +223,21 @@ export function TimelineDemo() {
             <div className="flex justify-between items-center">
               <div className="relative inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
                 <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-                  <span className="">Team Lead</span>
+                  <span className="">Value Village</span>
                 </div>
                 <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-                  <span className="">Team Lead</span>
+                  <span className="">Value Village</span>
                 </div>
               </div>
-              <div className="font-normal text-sm text-white pl-2">
-                Feb 2024 - March 2024
-              </div>
+              <div className="font-normal text-sm text-white pl-2">2023 - Present</div>
             </div>
           </h1>
           <div className="mb-8">
             <div className="gap-2 items-center text-neutral-300 text-xs md:text-lg md:max-w-2xl">
               <div>
                 <ul>
-                  <li>
-                    &#8226; Led a team of developers to work on ZilBil, a
-                    roommate matching app aimed at
-                  </li>
-                  <li className="pl-3">solving housing crisis in Canada.</li>
-                  <li>
-                    &#8226; Gained hands-on experience in React, Node.js,
-                    MongoDB, and guided the team
-                  </li>
-                  <li className="pl-3">
-                    through development from ideation to deployment.
-                  </li>
+                  <li>&#8226; Delivered customer-facing service in a fast-paced retail environment while handling sales, inventory, and day-to-day operations.</li>
+                  <li>&#8226; Built strong teamwork, communication, and problem-solving habits by working under constant operational pressure and changing priorities.</li>
                 </ul>
               </div>
             </div>

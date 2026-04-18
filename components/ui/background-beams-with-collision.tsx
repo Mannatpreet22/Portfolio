@@ -128,7 +128,7 @@ export function BackgroundBeamsWithCollisionDemo() {
                 </h2>
                 {/* {para} */}
                 <div className="max-w-2xl text-center md:text-left">
-                    <TextGenerateEffect words={'Aspiring Software Developer | Crafting Innovative Solutions with Precision and Passion'} />
+                    <TextGenerateEffect words={"Software Developer Intern | Building mobile, backend, and cloud systems with a focus on performance, reliability, and product stability"} />
                 </div>
                 {/* Icons row below the generated text */}
 

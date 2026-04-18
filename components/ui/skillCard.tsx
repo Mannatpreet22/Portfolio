@@ -1,64 +1,64 @@
 import { cn } from "@/lib/utils";
 import {
-  IconBoxMultiple,
-  IconBrowser,
+  IconBolt,
   IconBulb,
+  IconCloud,
   IconCode,
   IconDatabase,
-  IconLayersDifference,
+  IconDeviceMobile,
+  IconGitBranch,
   IconServer,
-  IconTerminal2,
 } from "@tabler/icons-react";
 import { CoverDemo } from "./cover";
 
 export function SkillCard() {
     const features = [
         {
-          title: "Full-Stack Development",
+          title: "Mobile Development",
           description:
-            "Building dynamic web applications using Next.js, React.js, and Express.js with seamless front-to-back integration.",
-          icon: <IconTerminal2 />,
+            "Building performant mobile experiences with React Native, Expo, FlashList, TanStack Query, and production-focused debugging across Android and iOS.",
+          icon: <IconDeviceMobile />,
         },
         {
-          title: "Database Expertise",
+          title: "Backend Microservices",
           description:
-            "Managing and optimizing databases using PostgreSQL, MongoDB, and Oracle for reliable data storage and retrieval.",
+            "Designing and improving backend services with Spring Boot, Node.js, REST APIs, Redis caching, and clean service-to-service integrations.",
+          icon: <IconServer />,
+        },
+        {
+          title: "Cloud & DevOps",
+          description:
+            "Working with AWS services like S3, ECS, ECR, Lambda, CloudFront, and CI/CD pipelines to support stable deployments and scalable infrastructure.",
+          icon: <IconCloud />,
+        },
+        {
+          title: "Databases & Caching",
+          description:
+            "Using PostgreSQL, Redis, Cassandra, and SQL-backed data models to build low-latency systems and reliable application workflows.",
           icon: <IconDatabase />,
         },
         {
-          title: "Containerization & CI/CD",
+          title: "Performance Optimization",
           description:
-            "Streamlining deployments with Docker, Prisma, and CI/CD pipelines for efficient, scalable applications.",
-          icon: <IconLayersDifference />,
+            "Improving app responsiveness by fixing render bottlenecks, reducing redundant calls, stabilizing media playback, and optimizing heavy user flows.",
+          icon: <IconBolt />,
+        },
+        {
+          title: "Distributed Systems",
+          description:
+            "Building systems around queues, async processing, microservice boundaries, event-driven flows, and fault-tolerant integrations.",
+          icon: <IconGitBranch />,
         },
         {
           title: "Programming Languages",
           description:
-            "Proficient in C, C++, Python, Golang, JavaScript, TypeScript, and SQL for versatile software development.",
+            "Writing production code in TypeScript and Java, with experience in Python, SQL, C, and C++ for both application and systems-oriented work.",
           icon: <IconCode />,
         },
         {
-          title: "Modern Web Development",
+          title: "Product Ownership",
           description:
-            "Designing responsive and user-friendly interfaces with Next.js, React.js, and modern frameworks like Tailwind CSS, Shadcn UI, and Framer Motion.",
-          icon: <IconBrowser />,
-        },
-        {
-          title: "Object-Oriented Programming",
-          description:
-            "Implementing OOP principles like inheritance, polymorphism, and encapsulation to create modular and reusable code.",
-          icon: <IconBoxMultiple />,
-        },
-        {
-          title: "Backend Development",
-          description:
-            "RESTful APIs with Node.js & Golang, microservices with nginx, Docker deployment, CI/CD pipelines, AWS & Digital Ocean.",
-          icon: <IconServer />,
-        },
-        {
-          title: "Algorithmic Thinking",
-          description:
-            "Crafting efficient data structures and algorithms to solve complex problems and optimize workflows.",
+            "Taking ownership of broken or unfinished features, driving them end to end, and improving reliability in the parts of the product users feel most.",
           icon: <IconBulb />,
         },
       ];

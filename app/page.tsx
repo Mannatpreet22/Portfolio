@@ -1,5 +1,6 @@
 import { AppleCardsCarouselDemo } from "@/components/ui/apple-cards-carousel";
 import { BackgroundBeamsWithCollisionDemo } from "@/components/ui/background-beams-with-collision";
+import { PortfolioChatbot } from "@/components/ui/chatbot";
 import { SignupFormDemo } from "@/components/ui/getInTouch";
 import { SkillCard } from "@/components/ui/skillCard";
 import { TimelineDemo } from "@/components/ui/timeline";
@@ -12,6 +13,7 @@ export default function Home() {
       <AppleCardsCarouselDemo />
       <TimelineDemo />
       <SignupFormDemo />
+      <PortfolioChatbot />
     </div>
   );
 }

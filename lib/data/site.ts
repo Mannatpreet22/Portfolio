@@ -12,7 +12,7 @@ export const site = {
     github: "https://github.com/Mannatpreet22",
     linkedin: "https://www.linkedin.com/in/mannatpreet-singh-khurana",
   },
-  resume: "/resume.pdf",
+  resume: "/Mannatpreet_Singh_Khurana.pdf",
 };
 
 export const navItems = [

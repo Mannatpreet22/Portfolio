@@ -1,0 +1,29 @@
+---
+title: Stylera
+description: A wardrobe recommendation platform with a React Native app and a polyglot microservices backend.
+date: "2025-03-01"
+stack: [React Native, Java, TypeScript, Python, PostgreSQL, Docker, Microservices]
+published: true
+---
+
+## Overview
+
+Stylera is a wardrobe recommendation platform: users catalog their clothes, and the system recommends outfits. It was built as an exercise in polyglot microservices — using the right language for each service rather than forcing everything into one stack.
+
+## Architecture
+
+- **React Native frontend** — wardrobe management and outfit browsing on iOS and Android.
+- **Java services** — user accounts and wardrobe data, where strong typing and mature ORM tooling matter.
+- **Python ML service** — outfit recommendations, where the ML ecosystem lives.
+
+Each service is containerized with Docker and owns its own PostgreSQL schema. No service touches another's tables — all communication happens over APIs.
+
+## Key decisions
+
+- **Schema-per-service.** Separate PostgreSQL schemas enforce service boundaries at the data layer. The Java wardrobe service can't reach into the recommender's data, which keeps coupling low and lets each service evolve its schema independently.
+- **Polyglot on purpose.** Recommendation logic in Python gets the ML ecosystem for free; CRUD-heavy services in Java get type safety and structure. The cost is operational overhead — Docker and consistent API contracts keep it manageable.
+- **Mobile-first frontend.** A wardrobe app lives on your phone, not your desktop — React Native covers both platforms from one codebase.
+
+## What I learned
+
+Distributed data is the hard part of microservices. Keeping wardrobe data and recommendation state consistent across services — without distributed transactions — meant designing APIs around clear ownership: one service is the source of truth for each piece of data, and everyone else asks for it.

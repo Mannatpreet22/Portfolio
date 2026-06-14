@@ -1,0 +1,49 @@
+---
+title: What Production Incidents Taught Me About Backend Reliability
+description: Lessons from being a first responder for production incidents — alarms, dashboards, and the debugging habits that actually matter.
+date: "2026-06-12"
+tags: [reliability, aws, observability]
+published: true
+---
+
+When I started acting as a first responder for production incidents, I expected the job to be about fixing bugs fast. It turned out to be mostly about something else: knowing where to look.
+
+Here are the lessons that stuck.
+
+## Alarms are only useful if they're actionable
+
+The first thing I learned setting up CloudWatch alarms: an alarm that fires often gets ignored, and an ignored alarm is worse than no alarm — it trains you to dismiss the page.
+
+Every alarm we keep answers three questions:
+
+1. **What broke?** The alarm name says which service and which symptom.
+2. **Who cares?** If no user-facing behavior degrades, it's a dashboard metric, not an alarm.
+3. **What do I do?** If the response is always "wait and see", the threshold is wrong.
+
+The practical effect: fewer alarms, but every page means something.
+
+## Dashboards answer "is it me or my dependency?"
+
+Most incidents in a microservices system start with the same question: is my service broken, or is something it depends on broken?
+
+A good Grafana dashboard answers that in seconds. We organize per-service dashboards in layers:
+
+- **Top row:** request rate, error rate, latency — the service's own health.
+- **Middle:** dependency calls — database latency, cache hit rate, downstream API errors.
+- **Bottom:** infrastructure — CPU, memory, connection pools.
+
+Reading top to bottom traces the blast radius. Errors up top but dependencies healthy? The bug is yours. Dependency row red? Go look at that service's dashboard instead.
+
+## Root cause lives two layers below the symptom
+
+A pattern I've seen repeatedly: the service that alerts is rarely the service that's broken. The feed API times out because the database is slow, because a queue consumer stopped draining, because a deploy three hours ago changed a batch size.
+
+The debugging habit that helps most is refusing to stop at the first plausible explanation. "The database is slow" is a symptom. *Why* is it slow, and *what changed*? Deploys, config changes, and traffic shifts explain most incidents — correlation with a timeline usually finds the answer faster than reading code.
+
+## Fix the class, not the instance
+
+After service health is restored, the tempting move is to close the incident and move on. The valuable move is asking: what would have caught this earlier, and what makes this whole class of failure impossible?
+
+Sometimes that's a new alarm. Sometimes it's a retry policy or a circuit breaker. Sometimes it's just a runbook entry so the next responder doesn't spend forty minutes rediscovering the same root cause.
+
+Reliability isn't a feature you ship once — it's the accumulation of every incident you actually learned from.

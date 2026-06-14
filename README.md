@@ -1,36 +1,59 @@
-# 🚀 Mannatpreet Singh Khurana - Portfolio
+# mkhurana.com — Portfolio
 
-Welcome to my portfolio!  
-I’m a Computer Programming & Analysis student at Seneca Polytechnic (GPA ~3.9) with a passion for full-stack development, cloud computing, and building AI-powered apps. Currently seeking Winter 2026 Co-op opportunities.
+Personal portfolio of **Mannatpreet Singh Khurana**, Software Engineer at Stikbook INC.
 
+Live at [mkhurana.com](https://www.mkhurana.com).
+
+## Stack
+
+- **Framework:** Next.js 15 (App Router, fully static pages) + React 19 + TypeScript
+- **Styling:** Tailwind CSS with a CSS-variable token system, dark/light themes via `next-themes`
+- **Content:** MDX blog and project case studies (`next-mdx-remote`, `gray-matter`, `rehype-pretty-code` + Shiki dual-theme highlighting)
+- **APIs:** Gemini-powered portfolio chatbot, Nodemailer contact form — both rate-limited
+- **Extras:** sitemap, robots, RSS feed, OG images via `next/og`, JSON-LD, Vercel Analytics
+
+## Structure
+
+```
+app/                  # Routes: home, /projects(+[slug]), /blog(+[slug]), /about, APIs
+components/
+  layout/             # Navbar, footer, theme provider/toggle
+  sections/           # Hero, featured projects, recent posts, contact — props-driven
+  ui/                 # Hand-rolled primitives (button, card, badge, inputs)
+  mdx/                # MDX renderer + element styling
+  chat/               # Floating chatbot widget
+content/
+  blog/*.mdx          # Blog posts (frontmatter: title, description, date, tags, published)
+  projects/*.mdx      # Project case studies
+lib/
+  data/               # Single source of truth: site, projects, experience, skills
+  mdx.ts              # Content loading + frontmatter validation
+  chatbot.ts          # Gemini chatbot context + generation
+  rate-limit.ts       # In-memory per-IP sliding window
+```
+
+## Development
+
+```bash
+npm install
+cp .env.example .env   # fill in EMAIL_USER, EMAIL_PASS, EMAIL_TO, GEMINI_API_KEY
+npm run dev
+```
+
+## Writing a blog post
+
+Add `content/blog/my-post.mdx`:
+
+```mdx
+---
+title: My Post
+description: One-line summary shown in lists and meta tags.
+date: "2026-06-12"
+tags: [backend, aws]
+published: true
 ---
 
-## 🛠 Tech Stack
-- **Languages:** C, C++, JavaScript, TypeScript, SQL  
-- **Frameworks:** React, Next.js, Node.js, Express, Tailwind CSS  
-- **Databases:** PostgreSQL, MongoDB, MySQL  
-- **Tools:** Git, Docker, Prisma, AWS, DigitalOcean  
+Post body in MDX...
+```
 
----
-
-## 📂 Featured Projects
-- **[CodeQuest](https://codequest.mkhurana.com)** – A competitive programming platform with real-time code execution.  
-  _Next.js • Express • PostgreSQL • Redis • Judge0 API_
-
-- **PayBuddy** – A wallet & merchant solution for peer-to-peer payments.  
-  _React • Node.js • MongoDB_
-
-- **LinguaBuddy** – AI-powered language learning app.  
-  _React • OpenAI API • TailwindCSS_
-
----
-
-## 📄 Resume & Contact
-- [Resume (PDF)](link-to-your-resume)  
-- [Portfolio Website](https://mkhurana.com)  
-- [LinkedIn](https://linkedin.com/in/yourprofile)  
-- [GitHub](https://github.com/kanwaljot17)  
-
----
-
-⭐️ Feel free to fork or explore my repos! Looking forward to collaborating on exciting projects.
+Set `published: false` to keep a draft out of the build.

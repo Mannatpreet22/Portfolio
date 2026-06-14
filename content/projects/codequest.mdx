@@ -1,0 +1,43 @@
+---
+title: CodeQuest
+description: A competitive programming platform with a scalable, queue-based code execution pipeline.
+date: "2025-09-01"
+stack: [Next.js, TypeScript, Express, Redis, PostgreSQL, Docker, Judge0, Turborepo]
+live: https://codequest.mkhurana.com
+cover: /codequest.png
+published: true
+---
+
+## Overview
+
+CodeQuest is a competitive programming platform where users solve timed challenges and get real-time verdicts on their submissions. The interesting problem isn't the UI — it's safely executing untrusted code at scale without letting a burst of submissions take the platform down.
+
+## Architecture
+
+The core of the system is an asynchronous execution pipeline that decouples submission intake from code execution:
+
+```
+API → Redis queue → worker → Judge0 → PostgreSQL → result stream
+```
+
+When a user submits code, the API validates the payload, enqueues a job in Redis, and returns immediately. Workers pull jobs off the queue, dispatch them to Judge0 for sandboxed execution, and persist verdicts to PostgreSQL. The client polls a status endpoint for real-time results.
+
+This design means a spike in submissions never blocks the API — the queue absorbs the burst and workers process at their own pace.
+
+## Key decisions
+
+- **Queue over direct execution.** Calling Judge0 synchronously from the API would tie request latency to execution time and collapse under concurrent load. The Redis queue makes intake O(1) and lets workers scale independently.
+- **Strict validation at the edge.** Every request passes through Zod schema validation before touching the queue, so malformed submissions fail fast with clear errors.
+- **Clean endpoint contract.** The API exposes `/run`, `/submit`, and `/status` — separating "try this code" from "submit for judgment" from "what happened".
+- **Turborepo monorepo.** Frontend, API, and workers live in one repo with shared types, CI/CD, and atomic deploys.
+
+## Production hardening
+
+- Rate limiting on submission endpoints to prevent abuse.
+- Health checks for the API, workers, and Judge0 connectivity.
+- Integration tests covering the full submit → execute → verdict flow.
+- Prisma migrations for safe, versioned schema changes.
+
+## Outcome
+
+The pipeline reliably handles concurrent submissions with real-time result streaming, and the architecture scales horizontally — adding workers is a config change, not a redesign.

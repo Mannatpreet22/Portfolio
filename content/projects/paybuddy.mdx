@@ -1,0 +1,42 @@
+---
+title: Paybuddy
+description: A digital wallet with bank on-ramp flows, webhook-based transaction confirmation, and a merchant portal.
+date: "2025-06-01"
+stack: [Next.js, TypeScript, Prisma, PostgreSQL, Docker, Turborepo, CI/CD]
+repo: https://github.com/Mannatpreet22/Paybuddy
+cover: /paybuddy.png
+published: true
+---
+
+## Overview
+
+Paybuddy is a wallet application where users move money in from a bank account, hold a balance, and pay merchants. The hard part of any payments system is the same: money movement is asynchronous, and the system has to stay correct when confirmations arrive late, twice, or not at all.
+
+## Architecture
+
+The system has three parts in a Turborepo monorepo:
+
+- **User wallet app** — onramp money from a bank, view balance and transaction history, send wallet-to-wallet payments.
+- **Mock bank server** — simulates a real bank's netbanking flow and fires webhooks on transaction completion.
+- **Merchant portal** — accept wallet payments, manage inventory and discounts, and monitor sales.
+
+## Webhook-based consistency
+
+The on-ramp flow is deliberately asynchronous:
+
+1. The user initiates a deposit; the wallet records a `pending` transaction.
+2. The bank processes the transfer on its own timeline.
+3. The bank calls a webhook on the wallet backend with the result.
+4. The webhook handler verifies the payload, marks the transaction `complete`, and credits the balance atomically.
+
+Balance updates and transaction status changes happen in a single database transaction, so a crash between steps can't create money or lose it. Duplicate webhook deliveries are idempotent — replaying a confirmation doesn't double-credit.
+
+## Key decisions
+
+- **Eventual consistency by design.** The UI shows pending states honestly instead of pretending deposits are instant — the same model real payment systems use.
+- **Prisma + PostgreSQL** for atomic balance mutations and a typed schema shared across apps.
+- **Docker + CI/CD** so the whole multi-app system spins up identically in dev and deploy.
+
+## Outcome
+
+A working payments system that demonstrates the patterns production fintech runs on: webhook-driven state machines, idempotent handlers, and atomic ledger updates.

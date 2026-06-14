@@ -13,12 +13,22 @@ He studies Computer Programming and Analysis at Seneca Polytechnic and enjoys wo
 - GitHub: https://github.com/Mannatpreet22
 
 ## Current Role
+### Software Engineer | Stikbook INC
+**Duration:** April 2026 - Present
+
+Mannatpreet is a full-time Software Engineer at Stikbook, building and operating production backend systems. He was promoted from his internship (January 2026 - April 2026) into the full-time role.
+
+#### Key Contributions (Software Engineer, April 2026 - Present)
+- Instrumented backend services with AWS CloudWatch alarms, dashboards, and Grafana; acts as a first responder for production incidents — triaging alerts, debugging root causes across microservices, and shipping fixes to restore service health.
+- Built a geo-based offers feature end-to-end: users discover nearby offers on an interactive map, claim and redeem them via dynamically generated QR codes. Architected the backend with Spring Boot and PostgreSQL using geospatial indexing for low-latency proximity queries.
+- Engineered an AI content moderation service in Python using multi-threading, GPT-4o for text and image moderation, and a Gemini audio model for audio content — filtering harmful content asynchronously without blocking user-facing upload flows.
+
 ### Software Developer Intern | Stikbook INC
-**Duration:** January 2026 - Present
+**Duration:** January 2026 - April 2026
 
-Mannatpreet works across frontend, backend, and infrastructure systems at Stikbook. He has contributed to application stability, feature development, backend services, infrastructure migrations, and product-critical debugging.
+During his internship, Mannatpreet worked across frontend, backend, and infrastructure systems. He contributed to application stability, feature development, backend services, infrastructure migrations, and product-critical debugging. Highlights include building a fault-tolerant media upload pipeline using S3 multipart upload, ECS, Lambda, and CloudFront (reducing upload failures by about 30% and cutting AWS costs by $1,000/month), and designing core social features (feed APIs, like/unlike) with Spring Boot microservices, Redis, and PostgreSQL serving about 10K users in production.
 
-#### Key Contributions
+#### Key Contributions (Internship)
 - Reworked the like/dislike pipeline and core feed behavior across frontend and backend, eliminating duplicate API calls and fixing shared-state issues where interactions on one post affected others.
 - Restored and stabilized broken chat functionality by identifying backend and integration issues affecting reliability and usability.
 - Fixed the search flow and backend Search Service so search worked correctly after previously being non-functional.
@@ -71,6 +81,16 @@ Paybuddy is a wallet application that allows users to onramp money from bank acc
 - Built wallet flows for bank onramping and transaction confirmation.
 - Developed a merchant application for wallet-based payments, discounts, inventory tracking, and sales monitoring.
 - Used a Turborepo monorepo setup with Docker and CI/CD workflows.
+
+### Stylera
+**Stack:** React Native, Java, TypeScript, Python, Microservices, PostgreSQL, Docker
+
+Stylera is a wardrobe recommendation platform with a React Native frontend and a polyglot microservices backend — Java services for user and wardrobe data, and a Python ML service for outfit recommendations.
+
+#### Highlights
+- Built a React Native mobile app for wardrobe management and outfit browsing.
+- Designed a polyglot microservices backend with Java and Python services communicating over APIs.
+- Containerized all services with Docker and managed data consistency via separate PostgreSQL schemas per service.
 
 ### Assembly Line Simulator
 **Stack:** C++, Object-Oriented Programming
